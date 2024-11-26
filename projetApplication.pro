@@ -12,7 +12,7 @@ CONFIG += c++17
 
 SOURCES += \
     connection.cpp \
-    cuiss_ing.cpp \
+
     main.cpp \
     mainwindow.cpp \
     matieres_premieres.cpp \
@@ -21,7 +21,7 @@ SOURCES += \
 
 HEADERS += \
     connection.h \
-    cuiss_ing.h \
+
     mainwindow.h \
     matieres_premieres.h \
     ravi_ing.h \

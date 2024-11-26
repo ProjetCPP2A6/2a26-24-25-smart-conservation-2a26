@@ -1,5 +1,6 @@
 QT       += core gui sql
 QT += charts
+QT += serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET= projetApplication
 
@@ -11,6 +12,7 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduino.cpp \
     connection.cpp \
     cuiss_ing.cpp \
     main.cpp \
@@ -20,6 +22,7 @@ SOURCES += \
     ravitaillements.cpp
 
 HEADERS += \
+    arduino.h \
     connection.h \
     cuiss_ing.h \
     mainwindow.h \
