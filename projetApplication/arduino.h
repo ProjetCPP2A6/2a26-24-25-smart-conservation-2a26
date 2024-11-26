@@ -8,6 +8,7 @@ class Arduino
 {
 public:
     Arduino();
+    ~Arduino();
     int connect_arduino();
     int close_arduino();
     void write_to_arduino(QByteArray);
