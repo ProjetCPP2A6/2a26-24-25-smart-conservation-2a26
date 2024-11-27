@@ -26,19 +26,18 @@
 #include <QSqlRecord>
 #include <QSqlError>
 
-#include <QGraphicsView>
-#include <QGraphicsScene>
-#include <QGraphicsRectItem>
-#include <QPainter>
-#include <QPen>
-#include <QBrush>
-#include <QSqlQuery>
-#include <QColor>
-
 #include <QtCharts/QChart>
 #include <QtCharts/QChartView>
-#include <QtCharts/QPieSeries>
+#include <QtCharts/QBarSeries>
+#include <QtCharts/QBarSet>
+#include <QtCharts/QBarCategoryAxis>
+#include <QtCharts/QValueAxis>
 #include <QGraphicsScene>
+#include <QSqlQuery>
+#include <QSqlError>
+#include <QMap>
+#include <QColor>
+#include <QtCharts>
 
 
 
@@ -48,7 +47,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    visualiserStocks();
+    afficherGraphiqueStock();
 
     updateNearExpiryTable();
     // Initialiser un QTimer pour vérifier les dates d'expiration toutes les heures
@@ -179,8 +178,7 @@ void MainWindow::on_ADD_clicked()
     {
         ui->tableView->setModel(Mp.afficher());
         checkExpiryDates();
-        visualiserStocks();
-
+        afficherGraphiqueStock();
         QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Ajout effectué\n"
                                              "Click Cancel to exit ."),QMessageBox::Cancel);
@@ -203,6 +201,7 @@ void MainWindow::on_remove1_clicked()
     if(test)
     {
         ui->tableView->setModel(Mp.afficher());
+        afficherGraphiqueStock();
         QMessageBox::information(nullptr,QObject::tr("OK"),
                                  QObject::tr("Suppression effectuée\n"
                                              "Click Cancel to exit ."),QMessageBox::Cancel);
@@ -497,34 +496,66 @@ void MainWindow::on_saveravi_clicked()
 
 }
 
-void MainWindow::visualiserStocks()
-{
-    Matieres_premieres matieres;
-    QList<QPair<QString, int>> stocks = matieres.getStocksDisponibles();
+void MainWindow::afficherGraphiqueStock() {
+    QSqlQuery query;
+    query.prepare("SELECT TYPE, QUANTITE FROM matieres_premieres");
 
-    QPieSeries *series = new QPieSeries();
-
-    for (const auto &stock : stocks) {
-        QString type = stock.first;
-        int quantite = stock.second;
-        series->append(type, quantite);
+    if (!query.exec()) {
+        QMessageBox::critical(this, "Erreur", "Erreur lors du chargement des données : " + query.lastError().text());
+        return;
     }
 
-    if (stocks.isEmpty()) {
-        series->append("Aucune donnée", 1);
+    // Création d'une série pour les barres
+    QBarSeries *series = new QBarSeries();
+    QStringList categories; // Liste des types pour l'axe X
+    QMap<QString, QColor> colorMap; // Associe chaque type à une couleur
+
+    while (query.next()) {
+        QString type = query.value(0).toString();
+        int quantite = query.value(1).toInt();
+
+        // Ajouter un ensemble de barres pour chaque type
+        QBarSet *set = new QBarSet(type);
+        set->append(quantite);
+
+        // Associer une couleur unique pour chaque type
+        if (!colorMap.contains(type)) {
+            QColor color = QColor::fromHsv(QRandomGenerator::global()->bounded(256), 200, 255);  // Couleur aléatoire
+            colorMap[type] = color;
+        }
+        set->setColor(colorMap[type]);
+
+        series->append(set);
+        categories.append(type);
     }
 
+    // Création du graphique
     QChart *chart = new QChart();
     chart->addSeries(series);
-    chart->setTitle("Répartition des stocks disponibles");
+    chart->setTitle("Quantités disponibles par ingrédient");
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
-    QGraphicsScene *scene = new QGraphicsScene(this); // Création de la scène
-    scene->addItem(chart); // Ajout du graphique dans la scène
+    // Axe X
+    QBarCategoryAxis *axisX = new QBarCategoryAxis();
+    axisX->append(categories);
+    chart->addAxis(axisX, Qt::AlignBottom);
+    series->attachAxis(axisX);
 
-    ui->graphicsView_3->setScene(scene); // Association de la scène au GraphicsView
+    // Axe Y
+    QValueAxis *axisY = new QValueAxis();
+    axisY->setTitleText("Quantité");
+    axisY->setRange(0, 100); // Modifier la plage selon vos données
+    chart->addAxis(axisY, Qt::AlignLeft);
+    series->attachAxis(axisY);
+
+    // Création d'une vue pour le graphique
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->resize(ui->graphicsView_3->size());
+    // Ajouter le QChartView dans une QGraphicsScene
+    QGraphicsScene *scene = new QGraphicsScene(this);
+    scene->addWidget(chartView);
+
+    // Associer la scène au QGraphicsView
+    ui->graphicsView_3->setScene(scene);
 }
-
-
-
-

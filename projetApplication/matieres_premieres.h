@@ -45,7 +45,6 @@ public:
     QSqlQueryModel* afficherPresExpiration();
 
 
-    QList<QPair<QString, int>> getStocksDisponibles();
 
 
 

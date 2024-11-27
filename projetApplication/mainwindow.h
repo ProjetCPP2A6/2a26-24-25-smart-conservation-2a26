@@ -45,8 +45,8 @@ public:
     void on_pushButton_6_clicked();
     void on_saveravi_clicked();
 
-    void visualiserStocks();
 
+    void afficherGraphiqueStock();
 
 
 

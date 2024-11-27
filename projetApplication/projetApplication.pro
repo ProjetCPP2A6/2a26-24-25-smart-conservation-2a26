@@ -1,5 +1,5 @@
 QT       += core gui sql
-QT += charts
+QT += core gui charts
 QT += serialport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET= projetApplication
