@@ -10,6 +10,8 @@
 #include <QWidget>
 #include <QStandardItemModel>
 
+#include"arduino.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -49,6 +51,7 @@ public:
     void afficherGraphiqueStock();
 
 
+    void clearLCDMessage();
 
 
 private:
@@ -59,6 +62,8 @@ private:
     Ui::MainWindow *ui;
     Matieres_premieres Mp;
     Ravitaillements R;
+    Arduino *arduino;
+
 
 
 

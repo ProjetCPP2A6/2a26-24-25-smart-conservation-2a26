@@ -6,6 +6,8 @@
 #include <QMessageBox>
 #include<QStandardItemModel>
 
+#include <QCloseEvent>
+
 #include <QPdfWriter>
 #include <QTextDocument>
 #include <QTextTable>
@@ -38,6 +40,7 @@
 #include <QMap>
 #include <QColor>
 #include <QtCharts>
+#include <arduino.h>
 
 
 
@@ -46,6 +49,34 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //arduino
+
+    // Créez l'objet Arduino
+     arduino = new Arduino();
+
+    // Connectez l'Arduino
+    if (arduino->connect_arduino() == 0) {
+        // Si la connexion réussie, envoyez le message
+        arduino->sendMessageToArduino("Bienvenue ");
+        QTimer::singleShot(10000, this, &MainWindow::clearLCDMessage);
+        // Lire la réponse de l'Arduino
+        QByteArray response = arduino->read_from_arduino();
+
+        if (!response.isEmpty()) {
+            qDebug() << "Réponse reçue de l'Arduino:" << response;
+            // Vous pouvez aussi vérifier ici si la réponse correspond à ce que vous attendez
+            QMessageBox::information(this, "Connexion", "Arduino a répondu : " + response);
+        } else {
+            qDebug() << "Aucune réponse de l'Arduino";
+            QMessageBox::warning(this, "Erreur", "Aucune réponse reçue de l'Arduino.");
+        }
+    } else {
+        qDebug() << "Erreur de connexion à l'Arduino!";
+        QMessageBox::critical(this, "Erreur de connexion", "Impossible de se connecter à l'Arduino. Vérifiez la connexion.");
+    }
+
+
 
     afficherGraphiqueStock();
 
@@ -140,9 +171,20 @@ MainWindow::MainWindow(QWidget *parent)
 
 }
 
+void MainWindow::clearLCDMessage()
+{
+    // Envoyer une commande pour effacer le message (dépend de votre écran LCD)
+    arduino->sendMessageToArduino("                ");  // Vider l'écran en envoyant des espaces
+
+    // Optionnel : Vous pouvez aussi réinitialiser l'écran ou afficher un message d'accueil
+}
 MainWindow::~MainWindow()
 {
     delete ui;
+    if (arduino != nullptr) {
+        arduino->close_arduino();
+        delete arduino;
+    }
 }
 
 void MainWindow::on_ADD_clicked()
