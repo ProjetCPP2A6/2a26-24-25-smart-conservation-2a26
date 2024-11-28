@@ -53,6 +53,8 @@ public:
 
     void clearLCDMessage();
 
+    void closeEvent(QCloseEvent *event)override;
+
 
 private:
     QLabel *notificationLabel;

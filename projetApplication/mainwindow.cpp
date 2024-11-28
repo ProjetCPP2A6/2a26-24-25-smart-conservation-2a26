@@ -57,10 +57,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Connectez l'Arduino
     if (arduino->connect_arduino() == 0) {
+        QMessageBox::information(this, "Connexion", "Arduino a répondu");
         // Si la connexion réussie, envoyez le message
         arduino->sendMessageToArduino("Bienvenue ");
         QTimer::singleShot(10000, this, &MainWindow::clearLCDMessage);
-        // Lire la réponse de l'Arduino
+
+
+        /*// Lire la réponse de l'Arduino
         QByteArray response = arduino->read_from_arduino();
 
         if (!response.isEmpty()) {
@@ -70,7 +73,7 @@ MainWindow::MainWindow(QWidget *parent)
         } else {
             qDebug() << "Aucune réponse de l'Arduino";
             QMessageBox::warning(this, "Erreur", "Aucune réponse reçue de l'Arduino.");
-        }
+        }*/
     } else {
         qDebug() << "Erreur de connexion à l'Arduino!";
         QMessageBox::critical(this, "Erreur de connexion", "Impossible de se connecter à l'Arduino. Vérifiez la connexion.");
@@ -375,6 +378,13 @@ void MainWindow::checkExpiryDates()
                     QString message = QString("Warning! The raw material %1 will expire in %2 day(s).")
                                           .arg(query.value("TYPE").toString())
                                           .arg(daysToExpiry);
+
+                    arduino->sendMessageToArduino(message);  // Envoyer le message à l'Arduino
+
+                    // Attendre 3 secondes avant d'effacer le message
+                    QTimer::singleShot(3000, [this]() {
+                        arduino->sendMessageToArduino("     ");
+                    });
                     showNotification(message);
 
                 }
@@ -600,4 +610,25 @@ void MainWindow::afficherGraphiqueStock() {
 
     // Associer la scène au QGraphicsView
     ui->graphicsView_3->setScene(scene);
+}
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    if (arduino->getserial() && arduino->getserial()->isOpen()) {
+        qDebug() << "Connexion avec l'Arduino. Envoi du message 'Au revoir'.";
+
+        // Envoyer le message "Au revoir"
+        arduino->sendMessageToArduino("Au revoir");
+
+        // Ajouter un délai pour effacer le message après la fermeture
+        QTimer::singleShot(3000, [this]() {
+            arduino->sendMessageToArduino("     ");  // Effacer le message après 3 secondes
+        });
+
+        // Permettre la fermeture immédiatement
+        event->accept();
+    } else {
+        qDebug() << "Le port série est fermé ou non disponible.";
+        QMessageBox::critical(this, "Erreur", "Le port série est fermé ou non disponible.");
+        event->accept();  // Permettre la fermeture même si la connexion échoue
+    }
 }
