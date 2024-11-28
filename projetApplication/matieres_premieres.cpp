@@ -44,7 +44,6 @@ bool Matieres_premieres::isValidDate(const QString& dateString) {
         return false;
     }
 
-    // Convertir en QDate pour vérifier si la date est valide
     QDate date = QDate::fromString(dateString, "dd/MM/yyyy");
     return date.isValid();
 }
