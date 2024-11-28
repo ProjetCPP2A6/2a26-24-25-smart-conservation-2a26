@@ -84,14 +84,13 @@ MainWindow::MainWindow(QWidget *parent)
     afficherGraphiqueStock();
 
     updateNearExpiryTable();
-    // Initialiser un QTimer pour vérifier les dates d'expiration toutes les heures
+
     QTimer *timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &MainWindow::checkExpiryDates);
     timer->start(5000);  // 3600000 ms = 1 heure
 
 
 
-    // Initialisation des composants de la notification
     notificationWidget = new QWidget(this);
     notificationWidget->setStyleSheet
         (
@@ -118,9 +117,8 @@ MainWindow::MainWindow(QWidget *parent)
         "font-size: 16px;"
         "color: red;"
         );
-    closeButton->setFixedSize(20, 20);  // Taille fixe pour s'assurer qu'il est visible
+    closeButton->setFixedSize(20, 20);
 
-    // Connecter le bouton de fermeture
     connect(closeButton, &QPushButton::clicked, [this]() {
         notificationWidget->setVisible(false);
     });
@@ -128,17 +126,16 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Layout pour la notification
     QHBoxLayout *layout = new QHBoxLayout(notificationWidget);
-    layout->addWidget(notificationLabel);  // Ajouter le label
-    layout->addWidget(closeButton);        // Ajouter le bouton de fermeture
-    layout->setContentsMargins(5, 5, 5, 5);  // Marges internes
-    layout->setSpacing(2);  // Espacement entre le texte et le bouton
+    layout->addWidget(notificationLabel);
+    layout->addWidget(closeButton);
+    layout->setContentsMargins(5, 5, 5, 5);
+    layout->setSpacing(2);
 
-    notificationWidget->setLayout(layout); // Définir le layout pour notificationWidget
+    notificationWidget->setLayout(layout);
 
 
-    // Positionner la notification en bas à droite
     QRect screenGeometry = QGuiApplication::primaryScreen()->availableGeometry();
-    /*notificationLabel->move(screenGeometry.width() / 2 - notificationLabel->width() / 2, screenGeometry.height() - notificationLabel->height() - 10);*/
+
     notificationWidget->move(screenGeometry.width() - notificationWidget->width() - 20, screenGeometry.height() - notificationWidget->height() - 20);
 
 
@@ -176,10 +173,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::clearLCDMessage()
 {
-    // Envoyer une commande pour effacer le message (dépend de votre écran LCD)
+    // Envoyer une commande pour effacer le message
     arduino->sendMessageToArduino("                ");  // Vider l'écran en envoyant des espaces
 
-    // Optionnel : Vous pouvez aussi réinitialiser l'écran ou afficher un message d'accueil
+
 }
 MainWindow::~MainWindow()
 {
@@ -401,7 +398,7 @@ void MainWindow::checkExpiryDates()
 void MainWindow::showNotification(const QString &message)
 {
     notificationLabel->setText(message);
-    notificationWidget->adjustSize();  // Ajuste la taille du widget à son contenu
+    notificationWidget->adjustSize();
     notificationWidget->setVisible(true);
 
     QRect windowGeometry = this->geometry();
@@ -409,7 +406,7 @@ void MainWindow::showNotification(const QString &message)
     int yPos = windowGeometry.height() - notificationWidget->height() - 20;
     notificationWidget->move(xPos, yPos);
 
-    // Fermer automatiquement après 5 secondes si non fermé manuellement
+
     QTimer::singleShot(5000, this, [this]() {
         if (notificationWidget->isVisible()) {
             notificationWidget->setVisible(false);
@@ -465,7 +462,7 @@ void MainWindow::on_save1_clicked()
 
     int idRavi = ui->idravi->text().toInt();
 
-    // Démarrer une transaction pour garantir l'intégrité des données
+
     QSqlQuery query;
     query.prepare("BEGIN TRANSACTION;");  // Démarrer la transaction (si supportée par la base)
 
@@ -485,7 +482,7 @@ void MainWindow::on_save1_clicked()
             return;
         }
 
-        // Mettre à jour la quantité dans matieres_premieres
+
         query.prepare("UPDATE matieres_premieres "
                       "SET QUANTITE = QUANTITE + :QUANTITE_AJOUTEE "
                       "WHERE ID = :ID_MATIERE_PREMIERE");
@@ -498,7 +495,7 @@ void MainWindow::on_save1_clicked()
         }
     }
 
-    query.prepare("COMMIT;");  // Terminer la transaction
+    query.prepare("COMMIT;");
     if (!query.exec()) {
         QMessageBox::critical(this, "Erreur", "Erreur lors de la validation de la transaction : " + query.lastError().text());
         return;
@@ -506,8 +503,8 @@ void MainWindow::on_save1_clicked()
 
     QMessageBox::information(this, "Succès", "Les ravitaillements ont été enregistrés et les stocks mis à jour avec succès.");
 
-    // Actualiser l'affichage pour refléter les changements dans le stock
-    on_pushButton_6_clicked();  // Rappeler la fonction pour recharger les matières premières et afficher les nouvelles quantités
+
+    on_pushButton_6_clicked();
 }
 
 void MainWindow::on_saveravi_clicked()
@@ -557,22 +554,22 @@ void MainWindow::afficherGraphiqueStock() {
         return;
     }
 
-    // Création d'une série pour les barres
+
     QBarSeries *series = new QBarSeries();
-    QStringList categories; // Liste des types pour l'axe X
-    QMap<QString, QColor> colorMap; // Associe chaque type à une couleur
+    QStringList categories;
+    QMap<QString, QColor> colorMap;
 
     while (query.next()) {
         QString type = query.value(0).toString();
         int quantite = query.value(1).toInt();
 
-        // Ajouter un ensemble de barres pour chaque type
+
         QBarSet *set = new QBarSet(type);
         set->append(quantite);
 
-        // Associer une couleur unique pour chaque type
+
         if (!colorMap.contains(type)) {
-            QColor color = QColor::fromHsv(QRandomGenerator::global()->bounded(256), 200, 255);  // Couleur aléatoire
+            QColor color = QColor::fromHsv(QRandomGenerator::global()->bounded(256), 200, 255);
             colorMap[type] = color;
         }
         set->setColor(colorMap[type]);
@@ -581,34 +578,34 @@ void MainWindow::afficherGraphiqueStock() {
         categories.append(type);
     }
 
-    // Création du graphique
+
     QChart *chart = new QChart();
     chart->addSeries(series);
     chart->setTitle("Quantités disponibles par ingrédient");
     chart->setAnimationOptions(QChart::SeriesAnimations);
 
-    // Axe X
+
     QBarCategoryAxis *axisX = new QBarCategoryAxis();
     axisX->append(categories);
     chart->addAxis(axisX, Qt::AlignBottom);
     series->attachAxis(axisX);
 
-    // Axe Y
+
     QValueAxis *axisY = new QValueAxis();
     axisY->setTitleText("Quantité");
-    axisY->setRange(0, 100); // Modifier la plage selon vos données
+    axisY->setRange(0, 100);
     chart->addAxis(axisY, Qt::AlignLeft);
     series->attachAxis(axisY);
 
-    // Création d'une vue pour le graphique
+
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
     chartView->resize(ui->graphicsView_3->size());
-    // Ajouter le QChartView dans une QGraphicsScene
+
     QGraphicsScene *scene = new QGraphicsScene(this);
     scene->addWidget(chartView);
 
-    // Associer la scène au QGraphicsView
+
     ui->graphicsView_3->setScene(scene);
 }
 void MainWindow::closeEvent(QCloseEvent *event)
@@ -616,19 +613,17 @@ void MainWindow::closeEvent(QCloseEvent *event)
     if (arduino->getserial() && arduino->getserial()->isOpen()) {
         qDebug() << "Connexion avec l'Arduino. Envoi du message 'Au revoir'.";
 
-        // Envoyer le message "Au revoir"
         arduino->sendMessageToArduino("Au revoir");
 
-        // Ajouter un délai pour effacer le message après la fermeture
         QTimer::singleShot(3000, [this]() {
-            arduino->sendMessageToArduino("     ");  // Effacer le message après 3 secondes
+            arduino->sendMessageToArduino("     ");
         });
 
-        // Permettre la fermeture immédiatement
+
         event->accept();
     } else {
         qDebug() << "Le port série est fermé ou non disponible.";
         QMessageBox::critical(this, "Erreur", "Le port série est fermé ou non disponible.");
-        event->accept();  // Permettre la fermeture même si la connexion échoue
+        event->accept();
     }
 }
