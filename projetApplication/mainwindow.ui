@@ -96,7 +96,7 @@ QTabBar::tab:hover {
 font: 700 9pt &quot;Berlin Sans FB Demi&quot;;</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="home">
        <attribute name="title">
@@ -137,7 +137,7 @@ font: 700 9pt &quot;Berlin Sans FB Demi&quot;;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="newstock">
          <property name="styleSheet">
@@ -1310,232 +1310,8 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
-        <widget class="QWidget" name="cooking">
-         <property name="styleSheet">
-          <string notr="true">#list
-{
-	background-color: #f0f0f0;
-    border: 2px solid #333;
-    border-radius: 10px;
-}
-#listofingredients
-{
-font: 700 13pt &quot;Berlin Sans FB Demi&quot;;
-color: white;
-}
-#widget_10
-{
-    background-color: #a0d8d1;  /* Bleu turquoise clair */
-    border: 2px solid #333;     /* Bordure noire */
-    border-radius: 10px;        /* Bords arrondis */
-    padding: 10px;              /* Espacement interne */
-}
-
-</string>
-         </property>
-         <attribute name="title">
-          <string>Cooking</string>
-         </attribute>
-         <widget class="QWidget" name="list" native="true">
-          <property name="geometry">
-           <rect>
-            <x>30</x>
-            <y>10</y>
-            <width>891</width>
-            <height>431</height>
-           </rect>
-          </property>
-          <widget class="QWidget" name="widget_10" native="true">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>10</y>
-             <width>351</width>
-             <height>411</height>
-            </rect>
-           </property>
-           <widget class="QLabel" name="listofingredients">
-            <property name="geometry">
-             <rect>
-              <x>20</x>
-              <y>10</y>
-              <width>201</width>
-              <height>41</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>List of ingredients :</string>
-            </property>
-           </widget>
-          </widget>
-         </widget>
-        </widget>
-        <widget class="QWidget" name="tab_3">
-         <property name="styleSheet">
-          <string notr="true">
-#box1_3
-{
-background-color:#fefeff;
-border-radius:30px #040301;
-	border: 2px solid #040301;
-}
-#saisir7
-{border:2px solid #42b5b2;
-}
-#saisir5
-{border:2px solid #42b5b2;
-}
-#saisir8
-{border:2px solid #42b5b2;
-}
-#saisir9
-{
-border:2px solid #42b5b2; 
-}
-#date_2
-{
-	
-	font: 12pt &quot;Berlin Sans FB&quot;;
-}
-#id2
-{font: 12pt &quot;Berlin Sans FB&quot;;
-}
-#Product
-{font: 12pt &quot;Berlin Sans FB&quot;;
-}
-#ADD_3
-{
-color: #42b5b2; 
-font: 12pt &quot;Berlin Sans FB&quot;;
-}
-#quantity_2
-{
-	font: 12pt &quot;Berlin Sans FB&quot;;
-}
-
-</string>
-         </property>
-         <attribute name="title">
-          <string>New</string>
-         </attribute>
-         <widget class="QWidget" name="box1_3" native="true">
-          <property name="geometry">
-           <rect>
-            <x>250</x>
-            <y>20</y>
-            <width>411</width>
-            <height>411</height>
-           </rect>
-          </property>
-          <widget class="QPushButton" name="ADD_3">
-           <property name="geometry">
-            <rect>
-             <x>280</x>
-             <y>340</y>
-             <width>93</width>
-             <height>29</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>ADD</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="Product">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>40</y>
-             <width>131</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>New product :</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="id2">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>100</y>
-             <width>63</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Id :</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="date_2">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>160</y>
-             <width>121</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Expiry date :</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="saisir9">
-           <property name="geometry">
-            <rect>
-             <x>162</x>
-             <y>100</y>
-             <width>191</width>
-             <height>26</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="saisir5">
-           <property name="geometry">
-            <rect>
-             <x>162</x>
-             <y>40</y>
-             <width>191</width>
-             <height>26</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="saisir7">
-           <property name="geometry">
-            <rect>
-             <x>162</x>
-             <y>160</y>
-             <width>191</width>
-             <height>26</height>
-            </rect>
-           </property>
-          </widget>
-          <widget class="QLabel" name="quantity_2">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>230</y>
-             <width>101</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Quantity :</string>
-           </property>
-          </widget>
-          <widget class="QLineEdit" name="saisir8">
-           <property name="geometry">
-            <rect>
-             <x>160</x>
-             <y>230</y>
-             <width>191</width>
-             <height>26</height>
-            </rect>
-           </property>
-          </widget>
-         </widget>
-        </widget>
         <widget class="QWidget" name="tab_4">
          <property name="styleSheet">
           <string notr="true">#PRODUCTS
@@ -1831,6 +1607,230 @@ font: 12pt &quot;Berlin Sans FB&quot;;
           <property name="text">
            <string>Products </string>
           </property>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="cooking">
+         <property name="styleSheet">
+          <string notr="true">#list
+{
+	background-color: #f0f0f0;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+#listofingredients
+{
+font: 700 13pt &quot;Berlin Sans FB Demi&quot;;
+color: white;
+}
+#widget_10
+{
+    background-color: #a0d8d1;  /* Bleu turquoise clair */
+    border: 2px solid #333;     /* Bordure noire */
+    border-radius: 10px;        /* Bords arrondis */
+    padding: 10px;              /* Espacement interne */
+}
+
+</string>
+         </property>
+         <attribute name="title">
+          <string>Cooking</string>
+         </attribute>
+         <widget class="QWidget" name="list" native="true">
+          <property name="geometry">
+           <rect>
+            <x>30</x>
+            <y>10</y>
+            <width>891</width>
+            <height>431</height>
+           </rect>
+          </property>
+          <widget class="QWidget" name="widget_10" native="true">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>10</y>
+             <width>351</width>
+             <height>411</height>
+            </rect>
+           </property>
+           <widget class="QLabel" name="listofingredients">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>10</y>
+              <width>201</width>
+              <height>41</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>List of ingredients :</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <property name="styleSheet">
+          <string notr="true">
+#box1_3
+{
+background-color:#fefeff;
+border-radius:30px #040301;
+	border: 2px solid #040301;
+}
+#saisir7
+{border:2px solid #42b5b2;
+}
+#saisir5
+{border:2px solid #42b5b2;
+}
+#saisir8
+{border:2px solid #42b5b2;
+}
+#saisir9
+{
+border:2px solid #42b5b2; 
+}
+#date_2
+{
+	
+	font: 12pt &quot;Berlin Sans FB&quot;;
+}
+#id2
+{font: 12pt &quot;Berlin Sans FB&quot;;
+}
+#Product
+{font: 12pt &quot;Berlin Sans FB&quot;;
+}
+#ADD_3
+{
+color: #42b5b2; 
+font: 12pt &quot;Berlin Sans FB&quot;;
+}
+#quantity_2
+{
+	font: 12pt &quot;Berlin Sans FB&quot;;
+}
+
+</string>
+         </property>
+         <attribute name="title">
+          <string>New</string>
+         </attribute>
+         <widget class="QWidget" name="box1_3" native="true">
+          <property name="geometry">
+           <rect>
+            <x>250</x>
+            <y>20</y>
+            <width>411</width>
+            <height>411</height>
+           </rect>
+          </property>
+          <widget class="QPushButton" name="ADD_3">
+           <property name="geometry">
+            <rect>
+             <x>280</x>
+             <y>340</y>
+             <width>93</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>ADD</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="Product">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>40</y>
+             <width>131</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>New product :</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="id2">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>100</y>
+             <width>63</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Id :</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="date_2">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>160</y>
+             <width>121</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Expiry date :</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="saisir9">
+           <property name="geometry">
+            <rect>
+             <x>162</x>
+             <y>100</y>
+             <width>191</width>
+             <height>26</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="saisir5">
+           <property name="geometry">
+            <rect>
+             <x>162</x>
+             <y>40</y>
+             <width>191</width>
+             <height>26</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="saisir7">
+           <property name="geometry">
+            <rect>
+             <x>162</x>
+             <y>160</y>
+             <width>191</width>
+             <height>26</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLabel" name="quantity_2">
+           <property name="geometry">
+            <rect>
+             <x>30</x>
+             <y>230</y>
+             <width>101</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Quantity :</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="saisir8">
+           <property name="geometry">
+            <rect>
+             <x>160</x>
+             <y>230</y>
+             <width>191</width>
+             <height>26</height>
+            </rect>
+           </property>
+          </widget>
          </widget>
         </widget>
        </widget>
@@ -3508,8 +3508,8 @@ color:#fefeff;
      <widget class="QLabel" name="Logo">
       <property name="geometry">
        <rect>
-        <x>-50</x>
-        <y>140</y>
+        <x>0</x>
+        <y>190</y>
         <width>451</width>
         <height>181</height>
        </rect>
