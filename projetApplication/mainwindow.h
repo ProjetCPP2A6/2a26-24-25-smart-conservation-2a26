@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "matieres_premieres.h"
 #include "ravitaillements.h"
+#include "commandes.h"
 
 #include "ravi_ing.h"
 #include <QMainWindow>
@@ -57,6 +58,15 @@ public:
 
     void processAlerts(QQueue<QString>* alertQueue);
 
+////Commandes////
+    void on_add_clicked();
+    void on_remove_2_clicked();
+    void on_pushButton_3_clicked();
+    void OpenPdf2();
+    void on_trier_clicked();
+    void on_ref_clicked();
+
+
 
 private:
     QLabel *notificationLabel;
@@ -68,7 +78,7 @@ private:
     Ravitaillements R;
     Arduino *arduino;
 
-
+    Commandes C;
 
 
 

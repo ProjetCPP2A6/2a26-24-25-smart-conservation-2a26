@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "matieres_premieres.h"
+#include "commandes.h"
 #include "ravitaillements.h"
 #include "ravi_ing.h"
 #include <QMessageBox>
@@ -50,12 +51,10 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //arduino
 
-    // Créez l'objet Arduino
+/////////////Stock/////////////////////
+
      arduino = new Arduino();
-
-    // Connectez l'Arduino
     if (arduino->connect_arduino() == 0) {
         QMessageBox::information(this, "Connexion", "Arduino a répondu");
         // Si la connexion réussie, envoyez le message
@@ -144,10 +143,6 @@ MainWindow::MainWindow(QWidget *parent)
     trayIcon->setVisible(true);
     trayIcon->showMessage("Notification", "Votre message de notification", QSystemTrayIcon::Information, 3000);
 
-
-
-    //matieres_premieres
-
     connect(ui->ADD, &QPushButton::clicked, this, &MainWindow::on_ADD_clicked);
     connect(ui->remove1, &QPushButton::clicked, this, &MainWindow::on_remove1_clicked);
     connect(ui->modifyB, &QPushButton::clicked, this, &MainWindow::on_modifyB_clicked);
@@ -155,8 +150,6 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->refresh, &QPushButton::clicked, this, &MainWindow::on_refresh_clicked);
     connect(ui->PDF, &QPushButton::clicked, this, &MainWindow::OpenPdf);
     connect(ui->tri, &QPushButton::clicked, this, &MainWindow::on_tri_clicked);
-
-    //ravitaillements
 
     connect(ui->pushButton_6, &QPushButton::clicked, this, &MainWindow::on_pushButton_6_clicked);
     connect(ui->save1, &QPushButton::clicked, this, &MainWindow::on_save1_clicked);
@@ -166,11 +159,161 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tableView->setModel(Mp.afficher());
     ui->tableView->setSortingEnabled(true);
 
+//////////Commandes///////////////////////////
 
+    connect(ui->trier,&QPushButton::clicked,this,&MainWindow::on_trier_clicked);
+    connect(ui->pdf2,&QPushButton::clicked,this,&MainWindow::OpenPdf2);
+
+    connect(ui->add,&QPushButton::clicked,this,&MainWindow::on_add_clicked);
+    connect(ui->remove_2,&QPushButton::clicked,this,&MainWindow::on_remove_2_clicked);
+    ui->tableView_3->setModel(C.afficherCommande());
+
+    connect(ui->pushButton_3,&QPushButton::clicked,this,&MainWindow::on_pushButton_3_clicked);
+    connect(ui->ref,&QPushButton::clicked,this,&MainWindow::on_ref_clicked);
+
+}
+///////Commandes////////////
+
+void MainWindow::on_add_clicked()
+{
+
+    int ID_COMMANDE = ui->lineEdit_10->text().toInt();
+    QString NOM_CLIENT = ui->saisir13->text();
+    QString METHOD_PAIEMENT = ui->saisir12->text();
+    QString DATE_COMMANDE = ui->lineEdit_4->text();
+    int ID_PRODUIT = ui->lineEdit_6->text().toInt();
+    int QTE_PRODUITS = ui->lineEdit_14->text().toInt();
+
+    if (!C.isID_COMMANDEUnique(ID_COMMANDE)) {
+        QMessageBox::warning(this, "Erreur", "L'ID du commande doit être unique.", QMessageBox::Ok);
+        return;
+    }
+
+    if (!C.isValidDateCommande(DATE_COMMANDE)) {
+        QMessageBox::warning(this, "Erreur", "La date de commande est invalide.", QMessageBox::Ok);
+        return;
+    }
+    Commandes C(ID_COMMANDE, NOM_CLIENT, METHOD_PAIEMENT, DATE_COMMANDE, ID_PRODUIT, QTE_PRODUITS);
+
+
+    bool test = C.ajouterCommande();
+
+    if (test) {
+
+        ui->tableView_3->setModel(C.afficherCommande());
+        /*QByteArray command = QByteArray::number(QTE_PRODUITS);  // Conversion de la quantité en QByteArray
+        arduino->write_to_arduino(command);
+        qDebug() << "Command envoyée à Arduino pour activer le buzzer : " << command;
+        */
+        QMessageBox::information(nullptr, QObject::tr("OK"),
+                                 QObject::tr("Ajout effectué\nClick Cancel to exit."), QMessageBox::Cancel);
+
+        /*arduino->write_to_arduino("1"); // Envoyer '1' pour activer le buzzer
+        QThread::sleep(1); // Pause pour que le buzzer sonne 1 seconde
+        arduino->write_to_arduino("0"); // Envoyer '0' pour désactiver le buzzer */
+
+    } else {
+
+        QMessageBox::critical(nullptr, QObject::tr("Not OK"),
+                              QObject::tr("Ajout non effectué.\nClick Cancel to exit."), QMessageBox::Cancel);
+    }
+
+    // Fermeture de la connexion à Arduino après l'exécution
+    //arduino->close_arduino();
+    //delete arduino; // Supprimer l'objet Arduino après usage
+}
+void MainWindow::on_remove_2_clicked()
+{
+    int ID_COMMANDE=ui->lineEdit_8->text().toInt();
+    bool test=C.supprimerCommande(ID_COMMANDE);
+    if (test)
+    {
+        ui->tableView_3->setModel(C.afficherCommande());
+
+        /*arduino->write_to_arduino("30"); // Envoyer '1' pour activer le buzzer
+        QThread::sleep(1); // Pause pour que le buzzer sonne 1 seconde
+        arduino->write_to_arduino("0"); // Envoyer '0' pour désactiver le buzzer*/
+
+        //QMessageBox::information(nullptr,QObject::tr("OK"),QObject::tr("Suppression effectuée\n" "Click cancel to exit."),QMessageBox::Cancel);
+    }
+    else
+        QMessageBox::information(nullptr,QObject::tr("OK"),QObject::tr("Suppression non effectuée\n" "Click cancel to exit."),QMessageBox::Cancel);
+
+}
+void MainWindow::on_pushButton_3_clicked()
+{
+    int ID_COMMANDE=ui->lineEdit_9->text().toInt();
+    if (ID_COMMANDE==0)
+    {
+        QMessageBox::warning(this,"Erreur","veuillez entrer un id valide");
+        return;
+    }
+    QSqlQueryModel* model =C.chercherCommande(ID_COMMANDE);
+    if(model->rowCount()==0)
+    {
+        QMessageBox::warning(this,"resultat","indisponible");
+
+    }
+    ui->tableView_3->setModel(model);
+}
+void MainWindow::OpenPdf2()
+{
+
+    QString filePath = QDir::homePath() + "/Desktop/matieres_premieres.pdf";
+    QPdfWriter pdfWriter(filePath);
+    pdfWriter.setPageSize(QPageSize(QPageSize::A4));
+    pdfWriter.setPageOrientation(QPageLayout::Portrait);
+    pdfWriter.setResolution(300);
+
+
+    QTextDocument doc;
+    QTextCursor cursor(&doc);
+
+
+    cursor.insertText("Liste des Commandes\n", QTextCharFormat());
+    cursor.insertBlock();
+
+
+    int columnCount = ui->tableView_3->model()->columnCount();
+    int rowCount = ui->tableView_3->model()->rowCount();
+    QTextTable *table = cursor.insertTable(rowCount + 1, columnCount);
+
+
+    for (int col = 0; col < columnCount; ++col) {
+        QString headerText = ui->tableView_3->model()->headerData(col, Qt::Horizontal).toString();
+        table->cellAt(0, col).firstCursorPosition().insertText(headerText);
+    }
+
+
+    for (int row = 0; row < rowCount; ++row) {
+        for (int col = 0; col < columnCount; ++col) {
+            QString cellText = ui->tableView_3->model()->data(ui->tableView_3->model()->index(row, col)).toString();
+            table->cellAt(row + 1, col).firstCursorPosition().insertText(cellText);
+        }
+    }
+
+    doc.print(&pdfWriter);
+    QMessageBox::information(this, "Succès", "Le PDF a été généré avec succès !");
+
+    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 
 
 }
+void MainWindow::on_trier_clicked()
+{
+    QSqlQueryModel *model= new QSqlQueryModel();
+    model->setQuery("SELECT *FROM commandes ORDER BY NOM_CLIENT ASC");
+    ui->tableView_3->setModel(model);
+}
 
+
+void MainWindow::on_ref_clicked()
+{
+    ui->tableView_3->setModel(C.afficherCommande());
+}
+
+
+/////////Stock/////////
 void MainWindow::clearLCDMessage()
 {
     // Envoyer une commande pour effacer le message

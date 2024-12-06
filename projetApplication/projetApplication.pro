@@ -13,6 +13,7 @@ CONFIG += c++17
 
 SOURCES += \
     arduino.cpp \
+    commandes.cpp \
     connection.cpp \
     cuiss_ing.cpp \
     main.cpp \
@@ -23,6 +24,7 @@ SOURCES += \
 
 HEADERS += \
     arduino.h \
+    commandes.h \
     connection.h \
     cuiss_ing.h \
     mainwindow.h \

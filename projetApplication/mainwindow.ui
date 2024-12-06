@@ -96,7 +96,7 @@ QTabBar::tab:hover {
 font: 700 9pt &quot;Berlin Sans FB Demi&quot;;</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="home">
        <attribute name="title">
@@ -137,7 +137,7 @@ font: 700 9pt &quot;Berlin Sans FB Demi&quot;;</string>
          </rect>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="newstock">
          <property name="styleSheet">
@@ -381,7 +381,8 @@ QLineEdit:focus {
         </widget>
         <widget class="QWidget" name="voirstock">
          <property name="styleSheet">
-          <string notr="true">#STOCK
+          <string notr="true">
+#STOCK
 {
 font: 700 26pt &quot;Berlin Sans FB Demi&quot;;
 color:#42b5b2;
@@ -543,7 +544,7 @@ QLineEdit:focus {
             <rect>
              <x>190</x>
              <y>20</y>
-             <width>241</width>
+             <width>181</width>
              <height>31</height>
             </rect>
            </property>
@@ -565,7 +566,7 @@ QLineEdit:focus {
           <widget class="QLabel" name="label_35">
            <property name="geometry">
             <rect>
-             <x>160</x>
+             <x>150</x>
              <y>20</y>
              <width>31</width>
              <height>21</height>
@@ -581,8 +582,8 @@ QLineEdit:focus {
           <widget class="QPushButton" name="searchB">
            <property name="geometry">
             <rect>
-             <x>440</x>
-             <y>18</y>
+             <x>380</x>
+             <y>20</y>
              <width>101</width>
              <height>31</height>
             </rect>
@@ -652,14 +653,14 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
           <widget class="QPushButton" name="refresh">
            <property name="geometry">
             <rect>
-             <x>560</x>
-             <y>20</y>
-             <width>31</width>
+             <x>510</x>
+             <y>10</y>
+             <width>81</width>
              <height>29</height>
             </rect>
            </property>
            <property name="text">
-            <string/>
+            <string>Refresh</string>
            </property>
            <property name="icon">
             <iconset>
@@ -669,14 +670,18 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
           <widget class="QPushButton" name="PDF">
            <property name="geometry">
             <rect>
-             <x>60</x>
+             <x>50</x>
              <y>320</y>
-             <width>31</width>
-             <height>29</height>
+             <width>51</width>
+             <height>31</height>
             </rect>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color:#42b5b2;
+font: 700 12pt &quot;Berlin Sans FB Demi&quot;;</string>
+           </property>
            <property name="text">
-            <string/>
+            <string>PDF</string>
            </property>
            <property name="icon">
             <iconset>
@@ -695,11 +700,15 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
              <x>20</x>
              <y>60</y>
              <width>31</width>
-             <height>31</height>
+             <height>41</height>
             </rect>
            </property>
+           <property name="styleSheet">
+            <string notr="true">color:#42b5b2;
+font: 700 12pt &quot;Berlin Sans FB Demi&quot;;</string>
+           </property>
            <property name="text">
-            <string/>
+            <string>Tri</string>
            </property>
            <property name="icon">
             <iconset>
@@ -1844,8 +1853,8 @@ font: 12pt &quot;Berlin Sans FB&quot;;
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>961</width>
-          <height>491</height>
+          <width>971</width>
+          <height>521</height>
          </rect>
         </property>
         <property name="currentIndex">
@@ -1853,7 +1862,13 @@ font: 12pt &quot;Berlin Sans FB&quot;;
         </property>
         <widget class="QWidget" name="newOrder">
          <property name="styleSheet">
-          <string notr="true">#neworder
+          <string notr="true">#label_15
+{font: 12pt &quot;Berlin Sans FB&quot;;
+}
+#label_22
+{font: 12pt &quot;Berlin Sans FB&quot;;
+}
+#neworder
 {
 font: 700 23pt &quot;Berlin Sans FB Demi&quot;;
 color:#42b5b2;
@@ -1949,17 +1964,17 @@ font: 12pt &quot;Berlin Sans FB&quot;;
          <widget class="QWidget" name="box4" native="true">
           <property name="geometry">
            <rect>
-            <x>70</x>
-            <y>10</y>
-            <width>801</width>
-            <height>441</height>
+            <x>230</x>
+            <y>50</y>
+            <width>471</width>
+            <height>401</height>
            </rect>
           </property>
           <widget class="QPushButton" name="add">
            <property name="geometry">
             <rect>
-             <x>680</x>
-             <y>400</y>
+             <x>310</x>
+             <y>340</y>
              <width>93</width>
              <height>29</height>
             </rect>
@@ -1968,205 +1983,232 @@ font: 12pt &quot;Berlin Sans FB&quot;;
             <string>ADD</string>
            </property>
           </widget>
-          <widget class="QLabel" name="neworder">
+          <widget class="QLineEdit" name="lineEdit_10">
            <property name="geometry">
             <rect>
-             <x>10</x>
-             <y>10</y>
-             <width>241</width>
-             <height>31</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>New Order :</string>
-           </property>
-          </widget>
-          <widget class="QWidget" name="widget_7" native="true">
-           <property name="geometry">
-            <rect>
-             <x>30</x>
-             <y>80</y>
-             <width>401</width>
-             <height>301</height>
+             <x>270</x>
+             <y>30</y>
+             <width>181</width>
+             <height>26</height>
             </rect>
            </property>
            <property name="styleSheet">
-            <string notr="true">#box4 {
-    background-color: #a0d8d1;  /* Bleu turquoise clair */
-    border: 2px solid #333;     /* Bordure noire */
-    border-radius: 10px;        /* Bords arrondis */
-    padding: 10px;              /* Espacement interne */
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
 }</string>
            </property>
-           <widget class="QLineEdit" name="lineEdit_10">
-            <property name="geometry">
-             <rect>
-              <x>190</x>
-              <y>50</y>
-              <width>181</width>
-              <height>26</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-    border: 2px solid #ccc;
-    border-radius: 5px; 
-    padding: 5px;
-}
-
-QLineEdit:focus {
-    border: 2px solid #42b5b2; 
-}</string>
-            </property>
-           </widget>
-           <widget class="QLineEdit" name="saisir13">
-            <property name="geometry">
-             <rect>
-              <x>190</x>
-              <y>100</y>
-              <width>181</width>
-              <height>26</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-    border: 2px solid #ccc;
-    border-radius: 5px; 
-    padding: 5px;
-}
-
-QLineEdit:focus {
-    border: 2px solid #42b5b2; 
-}</string>
-            </property>
-           </widget>
-           <widget class="QLineEdit" name="saisir12">
-            <property name="geometry">
-             <rect>
-              <x>190</x>
-              <y>150</y>
-              <width>181</width>
-              <height>26</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-    border: 2px solid #ccc;
-    border-radius: 5px; 
-    padding: 5px;
-}
-
-QLineEdit:focus {
-    border: 2px solid #42b5b2; 
-}</string>
-            </property>
-           </widget>
-           <widget class="QLineEdit" name="lineEdit_4">
-            <property name="geometry">
-             <rect>
-              <x>190</x>
-              <y>200</y>
-              <width>181</width>
-              <height>26</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QLineEdit {
-    border: 2px solid #ccc;
-    border-radius: 5px; 
-    padding: 5px;
-}
-
-QLineEdit:focus {
-    border: 2px solid #42b5b2; 
-}</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="label_4">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>50</y>
-              <width>191</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Order reference :</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="name">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>100</y>
-              <width>121</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Client name : </string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="paymentmethod">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>150</y>
-              <width>161</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Payment method :</string>
-            </property>
-           </widget>
-           <widget class="QLabel" name="date_3">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>200</y>
-              <width>161</width>
-              <height>20</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Date:</string>
-            </property>
-           </widget>
           </widget>
-          <widget class="QWidget" name="widget_8" native="true">
+          <widget class="QLabel" name="label_4">
            <property name="geometry">
             <rect>
-             <x>450</x>
-             <y>20</y>
-             <width>331</width>
-             <height>361</height>
+             <x>60</x>
+             <y>30</y>
+             <width>191</width>
+             <height>20</height>
             </rect>
            </property>
-           <widget class="QLabel" name="label_16">
-            <property name="geometry">
-             <rect>
-              <x>10</x>
-              <y>10</y>
-              <width>141</width>
-              <height>31</height>
-             </rect>
-            </property>
-            <property name="text">
-             <string>Order Cart:</string>
-            </property>
-           </widget>
+           <property name="text">
+            <string>Order reference :</string>
+           </property>
           </widget>
-          <zorder>widget_7</zorder>
-          <zorder>add</zorder>
-          <zorder>neworder</zorder>
-          <zorder>widget_8</zorder>
+          <widget class="QLineEdit" name="saisir13">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>80</y>
+             <width>181</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
+}</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="name">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>80</y>
+             <width>121</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Client name : </string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="saisir12">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>130</y>
+             <width>181</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
+}</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="paymentmethod">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>130</y>
+             <width>161</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Payment method :</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_4">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>180</y>
+             <width>181</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
+}</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="date_3">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>180</y>
+             <width>161</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Date:</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_6">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>230</y>
+             <width>181</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
+}</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_14">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>280</y>
+             <width>181</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
+}</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_15">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>230</y>
+             <width>161</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Product reference:</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_22">
+           <property name="geometry">
+            <rect>
+             <x>60</x>
+             <y>280</y>
+             <width>191</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Quantity of Product :</string>
+           </property>
+          </widget>
+         </widget>
+         <widget class="QLabel" name="neworder">
+          <property name="geometry">
+           <rect>
+            <x>360</x>
+            <y>10</y>
+            <width>241</width>
+            <height>31</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>New Order :</string>
+          </property>
          </widget>
         </widget>
         <widget class="QWidget" name="consultOrder">
          <property name="styleSheet">
-          <string notr="true">
+          <string notr="true">#widget_9
+{background-color: #f0f0f0;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
 #lineEdit_8
 {
 border:2px solid #42b5b2; 
@@ -2188,109 +2230,213 @@ border:2px solid #42b5b2;
 color: #42b5b2; 
 font: 12pt &quot;Berlin Sans FB&quot;;
 }
-#pushButton_2
+#remove_2
 {
 color: #42b5b2; 
 font: 12pt &quot;Berlin Sans FB&quot;;
 }
-
+#trier
+{color: #42b5b2; 
+font: 12pt &quot;Berlin Sans FB&quot;;}
+#ref
+{color: #42b5b2; 
+font: 12pt &quot;Berlin Sans FB&quot;;}
+#pdf2
+{color: #42b5b2; 
+font: 12pt &quot;Berlin Sans FB&quot;;}
 
 </string>
          </property>
          <attribute name="title">
           <string>Consult</string>
          </attribute>
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="geometry">
-           <rect>
-            <x>640</x>
-            <y>380</y>
-            <width>93</width>
-            <height>29</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Remove</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_37">
-          <property name="geometry">
-           <rect>
-            <x>320</x>
-            <y>380</y>
-            <width>151</width>
-            <height>21</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Order reference :</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_8">
-          <property name="geometry">
-           <rect>
-            <x>480</x>
-            <y>380</y>
-            <width>151</width>
-            <height>26</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_38">
-          <property name="geometry">
-           <rect>
-            <x>212</x>
-            <y>40</y>
-            <width>151</width>
-            <height>20</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Order reference :</string>
-          </property>
-         </widget>
-         <widget class="QLineEdit" name="lineEdit_9">
-          <property name="geometry">
-           <rect>
-            <x>360</x>
-            <y>40</y>
-            <width>113</width>
-            <height>26</height>
-           </rect>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="geometry">
-           <rect>
-            <x>500</x>
-            <y>40</y>
-            <width>93</width>
-            <height>29</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Search</string>
-          </property>
-         </widget>
-         <widget class="QTableView" name="tableView_3">
-          <property name="geometry">
-           <rect>
-            <x>160</x>
-            <y>110</y>
-            <width>256</width>
-            <height>192</height>
-           </rect>
-          </property>
-         </widget>
          <widget class="QWidget" name="widget_9" native="true">
           <property name="geometry">
            <rect>
-            <x>50</x>
-            <y>60</y>
-            <width>120</width>
-            <height>80</height>
+            <x>60</x>
+            <y>20</y>
+            <width>851</width>
+            <height>431</height>
            </rect>
           </property>
+          <widget class="QTableView" name="tableView_3">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>70</y>
+             <width>751</width>
+             <height>251</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QTableView {
+    background-color: #f0f0f0;
+    alternate-background-color: #e0e0e0;
+    gridline-color: #d0d0d0;
+    border: 1px solid #c0c0c0;
+}
+QHeaderView::section {
+    background-color: #3a3a3a;
+    color: white;
+    font-weight: bold;
+    padding: 4px;
+    border: 1px solid #c0c0c0;
+}
+QTableView::item {
+    padding: 5px;
+    border: none;
+}
+QTableView::item:selected {
+    background-color: #ffa726;
+    color: white;
+}
+QScrollBar:vertical {
+    background: #f0f0f0;
+    width: 10px;
+    margin: 20px 0 20px 0;
+}
+QScrollBar::handle:vertical {
+    background: #a0a0a0;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_38">
+           <property name="geometry">
+            <rect>
+             <x>130</x>
+             <y>20</y>
+             <width>151</width>
+             <height>20</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Order reference :</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_9">
+           <property name="geometry">
+            <rect>
+             <x>290</x>
+             <y>20</y>
+             <width>141</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
+}</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pushButton_3">
+           <property name="geometry">
+            <rect>
+             <x>450</x>
+             <y>20</y>
+             <width>93</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Search</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="lineEdit_8">
+           <property name="geometry">
+            <rect>
+             <x>480</x>
+             <y>350</y>
+             <width>151</width>
+             <height>26</height>
+            </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QLineEdit {
+    border: 2px solid #ccc;
+    border-radius: 5px; 
+    padding: 5px;
+}
+
+QLineEdit:focus {
+    border: 2px solid #42b5b2; 
+}</string>
+           </property>
+          </widget>
+          <widget class="QLabel" name="label_37">
+           <property name="geometry">
+            <rect>
+             <x>320</x>
+             <y>350</y>
+             <width>151</width>
+             <height>21</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Order reference :</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="remove_2">
+           <property name="geometry">
+            <rect>
+             <x>640</x>
+             <y>350</y>
+             <width>93</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Remove</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="ref">
+           <property name="geometry">
+            <rect>
+             <x>760</x>
+             <y>10</y>
+             <width>81</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Refresh</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pdf2">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>330</y>
+             <width>51</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>PDF</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="trier">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>30</y>
+             <width>41</width>
+             <height>31</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Tri</string>
+           </property>
+          </widget>
          </widget>
         </widget>
        </widget>
