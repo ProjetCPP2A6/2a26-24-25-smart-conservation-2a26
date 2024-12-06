@@ -55,6 +55,8 @@ public:
 
     void closeEvent(QCloseEvent *event)override;
 
+    void processAlerts(QQueue<QString>* alertQueue);
+
 
 private:
     QLabel *notificationLabel;

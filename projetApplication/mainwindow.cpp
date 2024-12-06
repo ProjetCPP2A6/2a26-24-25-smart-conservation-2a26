@@ -372,9 +372,11 @@ void MainWindow::checkExpiryDates()
                 int daysToExpiry = QDate::currentDate().daysTo(expiryDate);
                 if (daysToExpiry <= 3 && daysToExpiry >= 0)
                 {
-                    QString message = QString("Warning! The raw material %1 will expire in %2 day(s).")
+
+                    QString message = QString(" %1 will expire in %2 day(s).")
                                           .arg(query.value("TYPE").toString())
                                           .arg(daysToExpiry);
+
 
                     arduino->sendMessageToArduino(message);  // Envoyer le message à l'Arduino
 
@@ -394,6 +396,7 @@ void MainWindow::checkExpiryDates()
 
 
 }
+
 
 void MainWindow::showNotification(const QString &message)
 {
