@@ -3,12 +3,13 @@
 #include "matieres_premieres.h"
 #include "ravitaillements.h"
 #include "commandes.h"
-
-#include "ravi_ing.h"
+#include "deliver.h"
 #include <QMainWindow>
 #include <QLabel>
 #include <QPushButton>
 #include <QWidget>
+#include <QSqlQueryModel>
+#include <QSqlTableModel>
 #include <QStandardItemModel>
 
 #include"arduino.h"
@@ -33,6 +34,7 @@ public:
     void on_refresh_clicked();
     void OpenPdf();
     void on_tri_clicked();
+     void updateTable();
 
     void checkExpiryDates();
     void showNotification(const QString &message);
@@ -66,7 +68,21 @@ public:
     void on_trier_clicked();
     void on_ref_clicked();
 
+private slots:
+    void on_pushButton_modifier_clicked();
+    void on_pushButton_ajouter_clicked();
+    void on_pushButton_supprimer_clicked();
+    void on_pushButton_rechercher_clicked();
+    void on_pushButton_PDF_clicked(); // Slot for PDF generation
 
+
+
+    void on_pushButton_status_clicked();
+
+
+
+
+    void on_pushButton_feedback_clicked();
 
 private:
     QLabel *notificationLabel;
@@ -80,6 +96,11 @@ private:
 
     Commandes C;
 
+    deliver Dtmp;
+    bool isDeleting = false;
+    QSqlTableModel *model;
+    QSqlQueryModel *searchModel; // For search results in tableView_2
+    QSerialPort *serial;
 
 
 

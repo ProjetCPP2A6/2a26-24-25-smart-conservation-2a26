@@ -3,9 +3,9 @@
 #include "matieres_premieres.h"
 #include "commandes.h"
 #include "ravitaillements.h"
-#include "ravi_ing.h"
 #include <QMessageBox>
 #include<QStandardItemModel>
+#include "arduino.h"
 
 #include <QCloseEvent>
 
@@ -18,6 +18,9 @@
 #include <QTemporaryFile>
 #include <QDir>
 
+#include <QTimer>
+#include <QPrinter>
+#include <QTextDocument>
 
 #include <QSystemTrayIcon>
 #include <QDateTime>
@@ -25,7 +28,8 @@
 #include <QGuiApplication>
 #include <QScreen>
 #include <QHBoxLayout>
-
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
 #include <QSqlRecord>
 #include <QSqlError>
 
@@ -42,12 +46,16 @@
 #include <QColor>
 #include <QtCharts>
 #include <arduino.h>
+#include <QSerialPort>
+#include <QSerialPortInfo>
 
 
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    , ui(new Ui::MainWindow),
+    serial(new QSerialPort(this))
+
 {
     ui->setupUi(this);
 
@@ -88,7 +96,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(timer, &QTimer::timeout, this, &MainWindow::checkExpiryDates);
     timer->start(5000);  // 3600000 ms = 1 heure
 
+    model = new QSqlTableModel(this);
+    model->setTable("LIVRAISON");
+    model->setEditStrategy(QSqlTableModel::OnFieldChange);
+    model->select(); // Load data into the model
+    ui->tableView_4->setModel(model); // Attach model to tableView
 
+    // Set up QSqlQueryModel for search
+    searchModel = new QSqlQueryModel(this);
+    ui->tableView_5->setModel(searchModel);
 
     notificationWidget = new QWidget(this);
     notificationWidget->setStyleSheet
@@ -772,4 +788,217 @@ void MainWindow::closeEvent(QCloseEvent *event)
         QMessageBox::critical(this, "Erreur", "Le port série est fermé ou non disponible.");
         event->accept();
     }
+}
+void MainWindow::on_pushButton_ajouter_clicked()
+{
+    int idL = ui->lineEdit_id_L->text().toInt();
+    QString address = ui->lineEdit_adress_L->text();
+    int clientId = ui->lineEdit_num_client->text().toInt();
+    QString status = ui->listWidget_statut_L->currentItem()->text();
+    int commandId = ui->lineEdit_id_commande->text().toInt();
+
+    QSqlRecord record = model->record();
+    record.setValue("ID_L", idL);
+    record.setValue("ADRESS_L", address);
+    record.setValue("NUM_CLIENT", clientId);
+    record.setValue("STATUT_L", status);
+    record.setValue("ID_COMMANDE", commandId);
+
+    if (model->insertRecord(-1, record)) {
+        QMessageBox::information(this, "Success", "Delivery added successfully.");
+        model->select();
+
+        ui->lineEdit_id_L->clear();
+        ui->lineEdit_adress_L->clear();
+        ui->lineEdit_num_client->clear();
+        ui->listWidget_statut_L->clearSelection();
+        ui->lineEdit_id_commande->clear();
+    } else {
+        QMessageBox::critical(this, "Error", "Failed to add delivery: " + model->lastError().text());
+    }
+}
+
+void MainWindow::on_pushButton_supprimer_clicked()
+{
+    QModelIndex currentIndex = ui->tableView_4->currentIndex();
+    if (currentIndex.isValid()) {
+        model->removeRow(currentIndex.row());
+        if (model->submitAll()) {
+            QMessageBox::information(this, "Success", "Delivery deleted successfully.");
+        } else {
+            QMessageBox::critical(this, "Error", "Failed to delete delivery: " + model->lastError().text());
+        }
+    } else {
+        QMessageBox::warning(this, "Error", "No record selected.");
+    }
+}
+
+void MainWindow::on_pushButton_modifier_clicked()
+{
+    if (model->submitAll()) {
+
+        QMessageBox::information(this, "Success", "Changes saved successfully.");
+    } else {
+        QMessageBox::critical(this, "Error", "Failed to save changes: " + model->lastError().text());
+    }
+}
+
+void MainWindow::on_pushButton_rechercher_clicked()
+{
+    QString searchText = ui->lineEdit_id_search->text();
+    if (searchText.isEmpty()) {
+        searchModel->setQuery("SELECT * FROM LIVRAISON");
+    } else {
+        QSqlQuery query;
+        query.prepare("SELECT * FROM LIVRAISON WHERE ID_L LIKE :searchText");
+        query.bindValue(":searchText", "%" + searchText + "%");
+        if (query.exec()) {
+            searchModel->setQuery(query);
+        } else {
+            QMessageBox::critical(this, "Error", "Search failed: " + query.lastError().text());
+        }
+    }
+}
+
+void MainWindow::on_pushButton_PDF_clicked()
+{
+    QPrinter printer;
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName("Livraison.pdf");
+    QTextDocument doc;
+
+    // Updated HTML to include NOTE and FEEDBACK
+    QString html = "<h1 align='center'>Liste des Livraisons</h1>"
+                   "<table border='1'>"
+                   "<tr><th>ID</th><th>Adresse</th><th>Num Client</th><th>Statut</th><th>ID Commande</th><th>Note</th><th>Feedback</th></tr>";
+
+    // Query updated to select NOTE and FEEDBACK
+    QSqlQuery query("SELECT ID_L, ADRESS_L, NUM_CLIENT, STATUT_L, ID_COMMANDE, NOTE, FEEDBACK FROM LIVRAISON");
+    while (query.next()) {
+        html += QString("<tr><td>%1</td><td>%2</td><td>%3</td><td>%4</td><td>%5</td><td>%6</td><td>%7</td></tr>")
+        .arg(query.value(0).toInt())   // ID_L
+            .arg(query.value(1).toString()) // ADRESS_L
+            .arg(query.value(2).toInt())   // NUM_CLIENT
+            .arg(query.value(3).toString()) // STATUT_L
+            .arg(query.value(4).toInt())   // ID_COMMANDE
+            .arg(query.value(5).toString()) // NOTE
+            .arg(query.value(6).toString()); // FEEDBACK
+    }
+    html += "</table>";
+    doc.setHtml(html);
+
+    // Print to PDF
+    doc.print(&printer);
+    QMessageBox::information(this, "Success", "PDF generated successfully.");
+}
+
+
+void MainWindow::on_pushButton_status_clicked()
+{
+    QString deliveryId = ui->lineEdit_id_status->text();
+    if (deliveryId.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Enter a delivery ID.");
+        return;
+    }
+    QSqlQuery query;
+    query.prepare("SELECT STATUT_L FROM LIVRAISON WHERE ID_L = :id");
+    query.bindValue(":id", deliveryId);
+    if (query.exec() && query.next()) {
+        QString status = query.value(0).toString();
+        char command;
+        if (status == "in storage") {
+            ui->progressBar->setValue(0);
+            ui->progressBar->setStyleSheet("QProgressBar::chunk { background-color: gray; }");
+            ui->label_5->setText("in storage");
+
+            arduino->write_to_arduino("0");
+        } else if (status == "on the way") {
+            ui->progressBar->setValue(50);
+            ui->progressBar->setStyleSheet("QProgressBar::chunk { background-color: yellow; }");
+            ui->label_5->setText("on the way");
+
+            arduino->write_to_arduino("1");
+        } else if (status == "delivered") {
+            ui->progressBar->setValue(100);
+            ui->progressBar->setStyleSheet("QProgressBar::chunk { background-color: green; }");
+            ui->label_5->setText("delivered");
+
+            arduino->write_to_arduino("2");
+        } else if (status == "canceled") {
+            ui->progressBar->setValue(100);
+            ui->progressBar->setStyleSheet("QProgressBar::chunk { background-color: red; }");
+            ui->label_5->setText("canceled");
+
+            arduino->write_to_arduino("3");
+        } else {
+            QMessageBox::warning(this, "Error", "Unknown status.");
+            ui->label_5->setText("Unknown");
+
+            arduino->write_to_arduino("4");
+        }
+
+
+    } else {
+        QMessageBox::critical(this, "Error", "Failed to fetch status: " + query.lastError().text());
+    }
+}
+
+
+
+void MainWindow::on_pushButton_feedback_clicked()
+{    QString deliveryId = ui->lineEdit_id_feedback->text();
+    QString note = ui->lineEdit_note->text();
+
+    if (deliveryId.isEmpty() || note.isEmpty()) {
+        QMessageBox::warning(this, "Error", "Please fill in both Delivery ID and Note.");
+        return;
+    }
+
+    // Determine feedback based on which checkbox is checked
+    QString feedback;
+    if (ui->checkBox->isChecked()) {  // sad face checkbox
+        feedback = "bad";
+    } else if (ui->checkBox_2->isChecked()) {  // normal face checkbox
+        feedback = "medium";
+    } else if (ui->checkBox_3->isChecked()) {  // happy face checkbox
+        feedback = "good";
+    } else {
+        QMessageBox::warning(this, "Error", "Please select a feedback face.");
+        return;
+    }
+
+    // Debug: print values to check if they are correct
+    qDebug() << "Delivery ID: " << deliveryId;
+    qDebug() << "Note: " << note;
+    qDebug() << "Feedback: " << feedback;
+
+    // Prepare SQL query to update note and feedback
+    QSqlQuery query;
+    query.prepare("UPDATE LIVRAISON SET NOTE = :note, FEEDBACK = :feedback WHERE ID_L = :id");
+    query.bindValue(":note", note);
+    query.bindValue(":feedback", feedback);
+    query.bindValue(":id", deliveryId);
+
+    // Check if the database is open
+    if (!QSqlDatabase::database().isOpen()) {
+        QMessageBox::critical(this, "Error", "Database connection is not open.");
+        return;
+    }
+
+    // Execute the query and check for errors
+    if (query.exec()) {
+        QMessageBox::information(this, "Success", "Feedback and note added successfully.");
+        model->select();
+    } else {
+        qDebug() << "SQL Error: " << query.lastError().text();
+        QMessageBox::critical(this, "Error", "Failed to add feedback and note: " + query.lastError().text());
+    }
+
+    // Clear input fields after saving
+    ui->lineEdit_id_feedback->clear();
+    ui->lineEdit_note->clear();
+    ui->checkBox->setChecked(false);
+    ui->checkBox_2->setChecked(false);
+    ui->checkBox_3->setChecked(false);
+
 }

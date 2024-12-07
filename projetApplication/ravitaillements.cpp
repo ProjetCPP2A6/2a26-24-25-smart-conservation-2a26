@@ -1,4 +1,6 @@
 #include "ravitaillements.h"
+#include "qdebug.h"
+#include "qvariant.h"
 #include <QString>
 #include <QSqlQuery>
 

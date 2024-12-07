@@ -1,6 +1,9 @@
 QT       += core gui sql
 QT += core gui charts
 QT += serialport
+QT += printsupport
+QT+= sql
+QT += widgets sql
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET= projetApplication
 
@@ -16,6 +19,7 @@ SOURCES += \
     commandes.cpp \
     connection.cpp \
     cuiss_ing.cpp \
+    deliver.cpp \
     main.cpp \
     mainwindow.cpp \
     matieres_premieres.cpp \
@@ -27,6 +31,7 @@ HEADERS += \
     commandes.h \
     connection.h \
     cuiss_ing.h \
+    deliver.h \
     mainwindow.h \
     matieres_premieres.h \
     ravi_ing.h \
