@@ -1,0 +1,11 @@
+debug/arduino.o
+debug/commandes.o
+debug/connection.o
+debug/cuiss_ing.o
+debug/deliver.o
+debug/main.o
+debug/mainwindow.o
+debug/matieres_premieres.o
+debug/ravi_ing.o
+debug/ravitaillements.o
+debug/moc_mainwindow.o
