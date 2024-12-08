@@ -61,7 +61,9 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 /////////////Stock/////////////////////
+///
 
+/*
      arduino = new Arduino();
     if (arduino->connect_arduino() == 0) {
         QMessageBox::information(this, "Connexion", "Arduino a répondu");
@@ -70,7 +72,7 @@ MainWindow::MainWindow(QWidget *parent)
         QTimer::singleShot(10000, this, &MainWindow::clearLCDMessage);
 
 
-        /*/ Lire la réponse de l'Arduino
+        / Lire la réponse de l'Arduino
         QByteArray response = arduino->read_from_arduino();
 
         if (!response.isEmpty()) {
@@ -80,13 +82,13 @@ MainWindow::MainWindow(QWidget *parent)
         } else {
             qDebug() << "Aucune réponse de l'Arduino";
             QMessageBox::warning(this, "Erreur", "Aucune réponse reçue de l'Arduino.");
-        }*/
+        }
     } else {
         qDebug() << "Erreur de connexion à l'Arduino!";
         QMessageBox::critical(this, "Erreur de connexion", "Impossible de se connecter à l'Arduino. Vérifiez la connexion.");
-    }
+    }*/
 
-
+///////////////
 
     afficherGraphiqueStock();
 

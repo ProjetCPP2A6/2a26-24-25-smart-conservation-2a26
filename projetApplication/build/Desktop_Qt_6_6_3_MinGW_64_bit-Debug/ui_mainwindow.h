@@ -2101,7 +2101,7 @@ public:
         tabWidget_2->setCurrentIndex(1);
         tabWidget_3->setCurrentIndex(0);
         tabWidget_4->setCurrentIndex(3);
-        tabWidget_5->setCurrentIndex(1);
+        tabWidget_5->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
