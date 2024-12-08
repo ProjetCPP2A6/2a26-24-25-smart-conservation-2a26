@@ -121,6 +121,7 @@ public:
     QPushButton *pushButton_3;
     QLabel *label_37;
     QPushButton *trier;
+    QPushButton *pdf2;
     QWidget *delivery;
     QTabWidget *tabWidget_4;
     QWidget *tab_8;
@@ -982,6 +983,9 @@ public:
         trier = new QPushButton(widget_9);
         trier->setObjectName("trier");
         trier->setGeometry(QRect(720, 30, 93, 29));
+        pdf2 = new QPushButton(widget_9);
+        pdf2->setObjectName("pdf2");
+        pdf2->setGeometry(QRect(190, 370, 93, 29));
         tabWidget_3->addTab(consultOrder, QString());
         modules->addTab(orders, QString());
         delivery = new QWidget();
@@ -1540,7 +1544,7 @@ public:
         modules->setCurrentIndex(3);
         tabWidget->setCurrentIndex(1);
         tabWidget_2->setCurrentIndex(2);
-        tabWidget_3->setCurrentIndex(0);
+        tabWidget_3->setCurrentIndex(1);
         tabWidget_4->setCurrentIndex(1);
         tabWidget_5->setCurrentIndex(1);
 
@@ -1615,6 +1619,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         label_37->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
         trier->setText(QCoreApplication::translate("MainWindow", "Trier", nullptr));
+        pdf2->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
         tabWidget_3->setTabText(tabWidget_3->indexOf(consultOrder), QCoreApplication::translate("MainWindow", "Consult", nullptr));
         modules->setTabText(modules->indexOf(orders), QCoreApplication::translate("MainWindow", "Orders", nullptr));
         nameproduct_2->setText(QCoreApplication::translate("MainWindow", "Date :", nullptr));

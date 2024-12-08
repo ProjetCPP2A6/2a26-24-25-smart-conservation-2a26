@@ -45,8 +45,8 @@ public:
 
     bool ajouter();
     QSqlQueryModel * afficher();
-    bool supprimer(int id);
-    //QSqlQueryModel* chercher(int ID_COMMANDE);
+    bool supprimer(int ID_COMMANDE);
+    QSqlQueryModel * chercher(int ID_COMMANDE);
 
 };
 #endif // COMMANDES_H

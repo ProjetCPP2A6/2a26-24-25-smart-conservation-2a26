@@ -1064,7 +1064,7 @@ font: 12pt &quot;Berlin Sans FB&quot;;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="newOrder">
          <property name="styleSheet">
@@ -1572,6 +1572,19 @@ border: 2px solid #42b5b2;
            </property>
            <property name="text">
             <string>Trier</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="pdf2">
+           <property name="geometry">
+            <rect>
+             <x>190</x>
+             <y>370</y>
+             <width>93</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>PDF</string>
            </property>
           </widget>
          </widget>

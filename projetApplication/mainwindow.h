@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include "produits.h"
 #include "commandes.h"
+#include "arduino.h"
 
 #include <QMainWindow>
 #include<QSqlQueryModel>
@@ -19,7 +20,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QSqlQueryModel *modelProduits;
-    /*void OpenPdf();*/
+    void OpenPdf2();
 
 
 
@@ -28,6 +29,10 @@ private slots:
 
     void on_add_clicked();
     //void on_ADD_3_clicked();
+    void on_remove_2_clicked();
+    void on_trier_clicked();
+
+    void on_pushButton_3_clicked();
 
 
 
@@ -35,7 +40,7 @@ private:
     Ui::MainWindow *ui;
     Commandes C;
     Produits P;
-    Produits Etmp;
+    Arduino *arduino;
 
 };
 #endif // MAINWINDOW_H

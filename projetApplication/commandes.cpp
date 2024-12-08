@@ -83,16 +83,21 @@ QSqlQueryModel * Commandes::afficher()
 
     return model;
 }
-bool Commandes::supprimer(int id)
+bool Commandes::supprimer(int ID_COMMANDE)
 {
     QSqlQuery query;
-    QString res=QString::number(ID_COMMANDE);
-    query.prepare("Delete from commande where ID_COMMANDE= :res");
-    query.bindValue(":ID_COMMANDE",res);
+    query.prepare("DELETE FROM Commandes WHERE ID_COMMANDE = :ID_COMMANDE");
+    query.bindValue(":ID_COMMANDE", ID_COMMANDE);  // Directly bind the integer ID_COMMANDE
 
-    return query.exec();
+    if (!query.exec()) {
+        qDebug() << "Erreur lors de la suppression de la commande:" << query.lastError().text();
+        return false;
+    }
+
+    return true;
+
 }
-/*QSqlQueryModel* Commandes::chercher(int ID_COMMANDE)
+QSqlQueryModel* Commandes::chercher(int ID_COMMANDE)
 {
     QSqlQueryModel* model = new QSqlQueryModel();
 
@@ -111,4 +116,4 @@ bool Commandes::supprimer(int id)
 
     return model;
 }
-*/
+
