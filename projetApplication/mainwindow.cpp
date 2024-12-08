@@ -63,17 +63,20 @@ MainWindow::MainWindow(QWidget *parent)
 /////////////Stock/////////////////////
 ///
 
-/*
-     arduino = new Arduino();
-    if (arduino->connect_arduino() == 0) {
+
+//     arduino = new Arduino();
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+
+    if (ret==0){
         QMessageBox::information(this, "Connexion", "Arduino a répondu");
         // Si la connexion réussie, envoyez le message
-        arduino->sendMessageToArduino("Bienvenue ");
+//Ken theb trajaaha nahi commentaire A.sendtoarduino
+        //  A.sendMessageToArduino("Bienvenue ");
         QTimer::singleShot(10000, this, &MainWindow::clearLCDMessage);
 
 
-        / Lire la réponse de l'Arduino
-        QByteArray response = arduino->read_from_arduino();
+       // / Lire la réponse de l'Arduino
+        QByteArray response = A.read_from_arduino();
 
         if (!response.isEmpty()) {
             qDebug() << "Réponse reçue de l'Arduino:" << response;
@@ -86,7 +89,7 @@ MainWindow::MainWindow(QWidget *parent)
     } else {
         qDebug() << "Erreur de connexion à l'Arduino!";
         QMessageBox::critical(this, "Erreur de connexion", "Impossible de se connecter à l'Arduino. Vérifiez la connexion.");
-    }*/
+    }
 
 ///////////////
 
@@ -195,7 +198,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->Tab_facture_2->setModel(f.afficher());
 
     ////arduino
-    int ret=A.connect_arduino(); // lancer la connexion à arduino
     switch(ret){
     case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
         break;
