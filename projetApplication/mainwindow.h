@@ -14,6 +14,15 @@
 
 #include"arduino.h"
 
+
+//Youssef Libraries
+#include "finances.h"
+#include <QMainWindow>
+#include <QrCodeGenerator.h>  // Include the QR code generator header
+#include "arduino.h"
+
+//
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -27,6 +36,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+private slots:
     void on_ADD_clicked();
     void on_remove1_clicked();
     void on_modifyB_clicked();
@@ -68,7 +78,7 @@ public:
     void on_trier_clicked();
     void on_ref_clicked();
 
-private slots:
+
     void on_pushButton_modifier_clicked();
     void on_pushButton_ajouter_clicked();
     void on_pushButton_supprimer_clicked();
@@ -84,6 +94,31 @@ private slots:
 
     void on_pushButton_feedback_clicked();
 
+
+    //Youssef functions  /////////////////////////
+
+    void on_add_facture_btn_clicked();
+
+    void on_Delete_facture_clicked();
+
+    void on_searcher_facture_foredit_clicked();
+
+    void on_Recherche_facture_2_clicked();
+
+    void on_Recherche_facture_textChanged(const QString &arg1);
+
+    void on_PDF_clicked();
+
+
+    void on_tabWidget_5_currentChanged(int index);
+
+    void on_comboBox_trifactures_currentTextChanged(const QString &arg1);
+
+    void on_Qr_code_btn_clicked();
+
+    void on_rfid_btn_clicked();
+
+    //   /////////////////////////
 private:
     QLabel *notificationLabel;
     QWidget *notificationWidget;
@@ -101,6 +136,11 @@ private:
     QSqlTableModel *model;
     QSqlQueryModel *searchModel; // For search results in tableView_2
     QSerialPort *serial;
+
+    Finance f;
+
+    QrCodeGenerator m_generator; // QR code generator object
+
 
 
 

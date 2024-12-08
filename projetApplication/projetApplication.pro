@@ -4,6 +4,8 @@ QT += serialport
 QT += printsupport
 QT+= sql
 QT += widgets sql
+QT       += core gui sql network printsupport widgets svg serialport
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET= projetApplication
 
@@ -24,8 +26,10 @@ SOURCES += \
     mainwindow.cpp \
     matieres_premieres.cpp \
     ravi_ing.cpp \
-    ravitaillements.cpp
-
+    ravitaillements.cpp\
+    QrCodeGenerator.cpp \
+    finances.cpp \
+    qrcodegen/qrcodegen.cpp
 HEADERS += \
     arduino.h \
     commandes.h \
@@ -35,7 +39,10 @@ HEADERS += \
     mainwindow.h \
     matieres_premieres.h \
     ravi_ing.h \
-    ravitaillements.h
+    ravitaillements.h\
+    QrCodeGenerator.h \
+    finances.h \
+    qrcodegen/qrcodegen.h
 
 FORMS += \
     mainwindow.ui
@@ -44,3 +51,12 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+
+DISTFILES += \
+    icon.ico \
+    icon.png
+
+RESOURCES += \
+    res.qrc
+

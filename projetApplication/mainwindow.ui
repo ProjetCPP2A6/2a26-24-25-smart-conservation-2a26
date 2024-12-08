@@ -96,7 +96,7 @@ QTabBar::tab:hover {
 font: 700 9pt &quot;Berlin Sans FB Demi&quot;;</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="home">
        <attribute name="title">
@@ -2455,7 +2455,7 @@ QLineEdit:focus {
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="tab_8">
          <property name="styleSheet">
@@ -3127,65 +3127,65 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
          <widget class="QWidget" name="widget_5" native="true">
           <property name="geometry">
            <rect>
-            <x>260</x>
-            <y>20</y>
-            <width>401</width>
+            <x>330</x>
+            <y>10</y>
+            <width>411</width>
             <height>401</height>
            </rect>
           </property>
           <widget class="QLabel" name="label_39">
            <property name="geometry">
             <rect>
-             <x>50</x>
+             <x>80</x>
              <y>70</y>
              <width>71</width>
              <height>20</height>
             </rect>
            </property>
            <property name="text">
-            <string>Code :</string>
+            <string>ID:</string>
            </property>
           </widget>
           <widget class="QLabel" name="label_40">
            <property name="geometry">
             <rect>
-             <x>50</x>
+             <x>60</x>
              <y>120</y>
              <width>81</width>
              <height>20</height>
             </rect>
            </property>
            <property name="text">
-            <string>Type :</string>
+            <string>Montant:</string>
            </property>
           </widget>
           <widget class="QLabel" name="label_52">
            <property name="geometry">
             <rect>
-             <x>50</x>
+             <x>60</x>
              <y>170</y>
              <width>63</width>
              <height>20</height>
             </rect>
            </property>
            <property name="text">
-            <string>Name :</string>
+            <string>Date</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_8">
+          <widget class="QPushButton" name="add_facture_btn">
            <property name="geometry">
             <rect>
-             <x>240</x>
-             <y>310</y>
+             <x>160</x>
+             <y>240</y>
              <width>93</width>
              <height>29</height>
             </rect>
            </property>
            <property name="text">
-            <string>Save</string>
+            <string>Add/Update</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="lineEdit_18">
+          <widget class="QLineEdit" name="Id_facture">
            <property name="geometry">
             <rect>
              <x>140</x>
@@ -3195,7 +3195,7 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="lineEdit_19">
+          <widget class="QLineEdit" name="Montant_Facture">
            <property name="geometry">
             <rect>
              <x>140</x>
@@ -3205,37 +3205,69 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="lineEdit_20">
+          <widget class="QDateEdit" name="dateEditFacture">
            <property name="geometry">
             <rect>
              <x>140</x>
              <y>170</y>
+             <width>110</width>
+             <height>22</height>
+            </rect>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="Id_facture_modif">
+           <property name="enabled">
+            <bool>true</bool>
+           </property>
+           <property name="geometry">
+            <rect>
+             <x>200</x>
+             <y>330</y>
              <width>113</width>
              <height>26</height>
             </rect>
            </property>
-          </widget>
-          <widget class="QLineEdit" name="lineEdit_22">
-           <property name="geometry">
-            <rect>
-             <x>140</x>
-             <y>220</y>
-             <width>113</width>
-             <height>26</height>
-            </rect>
+           <property name="text">
+            <string/>
            </property>
           </widget>
-          <widget class="QLabel" name="label_54">
+          <widget class="QLabel" name="label_41">
            <property name="geometry">
             <rect>
-             <x>50</x>
-             <y>220</y>
-             <width>63</width>
+             <x>110</x>
+             <y>330</y>
+             <width>91</width>
              <height>20</height>
             </rect>
            </property>
            <property name="text">
-            <string>PDF :</string>
+            <string>ID a modifier</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="searcher_facture_foredit">
+           <property name="geometry">
+            <rect>
+             <x>330</x>
+             <y>330</y>
+             <width>93</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Search</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="rfid_btn">
+           <property name="geometry">
+            <rect>
+             <x>270</x>
+             <y>70</y>
+             <width>93</width>
+             <height>29</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Read rfid</string>
            </property>
           </widget>
          </widget>
@@ -3315,13 +3347,13 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
          <widget class="QWidget" name="widget_4" native="true">
           <property name="geometry">
            <rect>
-            <x>40</x>
-            <y>30</y>
-            <width>431</width>
+            <x>130</x>
+            <y>0</y>
+            <width>671</width>
             <height>391</height>
            </rect>
           </property>
-          <widget class="QPushButton" name="pushButton_7">
+          <widget class="QPushButton" name="Recherche_facture_3">
            <property name="geometry">
             <rect>
              <x>320</x>
@@ -3334,11 +3366,11 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
             <string>Search</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_10">
+          <widget class="QPushButton" name="Delete_facture_2">
            <property name="geometry">
             <rect>
-             <x>290</x>
-             <y>340</y>
+             <x>490</x>
+             <y>120</y>
              <width>93</width>
              <height>29</height>
             </rect>
@@ -3347,17 +3379,17 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
             <string>Remove</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="lineEdit_15">
+          <widget class="QLineEdit" name="idfacture_supp_2">
            <property name="geometry">
             <rect>
-             <x>160</x>
-             <y>340</y>
+             <x>490</x>
+             <y>90</y>
              <width>113</width>
              <height>26</height>
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="lineEdit_16">
+          <widget class="QLineEdit" name="Recherche_facture_4">
            <property name="geometry">
             <rect>
              <x>200</x>
@@ -3370,14 +3402,14 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
           <widget class="QLabel" name="label">
            <property name="geometry">
             <rect>
-             <x>110</x>
-             <y>330</y>
+             <x>460</x>
+             <y>80</y>
              <width>51</width>
              <height>41</height>
             </rect>
            </property>
            <property name="text">
-            <string>Code:</string>
+            <string>Id:</string>
            </property>
           </widget>
           <widget class="QLabel" name="label_2">
@@ -3393,64 +3425,6 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
             <string>Code:</string>
            </property>
           </widget>
-          <widget class="QTableWidget" name="tableWidget_3">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>80</y>
-             <width>411</width>
-             <height>201</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 700 10pt &quot;Berlin Sans FB Demi&quot;;</string>
-           </property>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string>Name</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Code</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>PDF</string>
-            </property>
-           </column>
-          </widget>
           <widget class="QLabel" name="label_9">
            <property name="geometry">
             <rect>
@@ -3461,160 +3435,99 @@ font: 12pt &quot;Berlin Sans FB&quot;; }
             </rect>
            </property>
            <property name="text">
-            <string>Purchase</string>
+            <string>Factures</string>
            </property>
           </widget>
-         </widget>
-         <widget class="QWidget" name="widget_6" native="true">
-          <property name="geometry">
-           <rect>
-            <x>490</x>
-            <y>30</y>
-            <width>441</width>
-            <height>401</height>
-           </rect>
-          </property>
-          <widget class="QPushButton" name="pushButton_9">
+          <widget class="QPushButton" name="PDF_3">
            <property name="geometry">
             <rect>
-             <x>290</x>
-             <y>20</y>
+             <x>490</x>
+             <y>170</y>
              <width>93</width>
              <height>29</height>
             </rect>
            </property>
            <property name="text">
-            <string>Search</string>
+            <string>PDF</string>
            </property>
           </widget>
-          <widget class="QPushButton" name="pushButton_11">
+          <widget class="QPushButton" name="Qr_code_btn_2">
            <property name="geometry">
             <rect>
-             <x>310</x>
-             <y>350</y>
+             <x>490</x>
+             <y>210</y>
              <width>93</width>
              <height>29</height>
             </rect>
            </property>
            <property name="text">
-            <string>Remove</string>
+            <string>Qr Code</string>
            </property>
           </widget>
-          <widget class="QLineEdit" name="lineEdit_17">
+          <widget class="QLabel" name="Qrcode_Label_2">
            <property name="geometry">
             <rect>
-             <x>160</x>
-             <y>20</y>
-             <width>113</width>
-             <height>26</height>
+             <x>470</x>
+             <y>270</y>
+             <width>151</width>
+             <height>81</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+          <widget class="QTableView" name="Tab_facture_2">
+           <property name="geometry">
+            <rect>
+             <x>50</x>
+             <y>80</y>
+             <width>371</width>
+             <height>211</height>
             </rect>
            </property>
           </widget>
-          <widget class="QLineEdit" name="lineEdit_21">
+          <widget class="QComboBox" name="comboBox_trifactures_2">
            <property name="geometry">
             <rect>
-             <x>170</x>
-             <y>350</y>
-             <width>113</width>
-             <height>26</height>
+             <x>260</x>
+             <y>310</y>
+             <width>69</width>
+             <height>22</height>
             </rect>
            </property>
+           <item>
+            <property name="text">
+             <string>Aucun</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>ID</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Montant</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </item>
           </widget>
           <widget class="QLabel" name="label_3">
            <property name="geometry">
             <rect>
-             <x>110</x>
-             <y>10</y>
-             <width>51</width>
+             <x>160</x>
+             <y>300</y>
+             <width>81</width>
              <height>41</height>
             </rect>
            </property>
            <property name="text">
-            <string>Code:</string>
-           </property>
-          </widget>
-          <widget class="QLabel" name="label_8">
-           <property name="geometry">
-            <rect>
-             <x>120</x>
-             <y>340</y>
-             <width>51</width>
-             <height>41</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Code:</string>
-           </property>
-          </widget>
-          <widget class="QTableWidget" name="tableWidget_7">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>80</y>
-             <width>411</width>
-             <height>201</height>
-            </rect>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">font: 700 10pt &quot;Berlin Sans FB Demi&quot;;</string>
-           </property>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <row>
-            <property name="text">
-             <string/>
-            </property>
-           </row>
-           <column>
-            <property name="text">
-             <string>Name</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>Code</string>
-            </property>
-           </column>
-           <column>
-            <property name="text">
-             <string>PDF</string>
-            </property>
-           </column>
-          </widget>
-          <widget class="QLabel" name="label_10">
-           <property name="geometry">
-            <rect>
-             <x>10</x>
-             <y>10</y>
-             <width>63</width>
-             <height>20</height>
-            </rect>
-           </property>
-           <property name="text">
-            <string>Sale</string>
+            <string>Trier par</string>
            </property>
           </widget>
          </widget>
@@ -3646,21 +3559,21 @@ font: 12pt &quot;Berlin Sans FB&quot;;
          <attribute name="title">
           <string>Statistics </string>
          </attribute>
-         <widget class="QGraphicsView" name="graphicsView">
+         <widget class="QGraphicsView" name="graphicsView_2">
           <property name="geometry">
            <rect>
-            <x>70</x>
-            <y>50</y>
+            <x>600</x>
+            <y>20</y>
             <width>361</width>
             <height>331</height>
            </rect>
           </property>
          </widget>
-         <widget class="QGraphicsView" name="graphicsView_2">
+         <widget class="QGraphicsView" name="graphicsView">
           <property name="geometry">
            <rect>
-            <x>480</x>
-            <y>50</y>
+            <x>190</x>
+            <y>20</y>
             <width>361</width>
             <height>331</height>
            </rect>

@@ -1,6 +1,6 @@
 #ifndef MATIERES_PREMIERES_H
 #define MATIERES_PREMIERES_H
-#include<QString>
+//#include<QString>
 #include<QSqlQuery>
 #include<QSqlQueryModel>
 #include <QTimer>
