@@ -3082,7 +3082,7 @@ font: 12pt &quot;Berlin Sans FB&quot;;
          </rect>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="nvfacture">
          <property name="styleSheet">

@@ -44,7 +44,7 @@ private slots:
     void on_refresh_clicked();
     void OpenPdf();
     void on_tri_clicked();
-     void updateTable();
+    // void updateTable();
 
     void checkExpiryDates();
     void showNotification(const QString &message);
@@ -68,7 +68,7 @@ private slots:
 
     void closeEvent(QCloseEvent *event)override;
 
-    void processAlerts(QQueue<QString>* alertQueue);
+   // void processAlerts(QQueue<QString>* alertQueue);
 
 ////Commandes////
     void on_add_clicked();
@@ -103,9 +103,9 @@ private slots:
 
     void on_searcher_facture_foredit_clicked();
 
-    void on_Recherche_facture_2_clicked();
+    void on_Recherche_facture_3_clicked();
 
-    void on_Recherche_facture_textChanged(const QString &arg1);
+    void on_Recherche_facture_4_textChanged(const QString &arg1);
 
     void on_PDF_clicked();
 
@@ -119,6 +119,8 @@ private slots:
     void on_rfid_btn_clicked();
 
     //   /////////////////////////
+
+
 private:
     QLabel *notificationLabel;
     QWidget *notificationWidget;
@@ -141,6 +143,7 @@ private:
 
     QrCodeGenerator m_generator; // QR code generator object
 
+    Arduino A;
 
 
 

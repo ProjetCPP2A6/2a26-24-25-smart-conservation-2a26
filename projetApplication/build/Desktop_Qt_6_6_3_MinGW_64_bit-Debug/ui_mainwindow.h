@@ -13,13 +13,17 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QCalendarWidget>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QDateEdit>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QTabWidget>
@@ -97,6 +101,16 @@ public:
     QPushButton *save1;
     QWidget *products;
     QTabWidget *tabWidget_2;
+    QWidget *tab_4;
+    QWidget *box5;
+    QLabel *label_36;
+    QLineEdit *lineEdit_5;
+    QPushButton *search_2;
+    QLabel *label_51;
+    QLineEdit *lineEdit_7;
+    QPushButton *remove;
+    QTableWidget *tableWidget_6;
+    QLabel *PRODUCTS;
     QWidget *cooking;
     QWidget *list;
     QWidget *widget_10;
@@ -112,42 +126,36 @@ public:
     QLineEdit *saisir7;
     QLabel *quantity_2;
     QLineEdit *saisir8;
-    QWidget *tab_4;
-    QWidget *box5;
-    QLabel *label_36;
-    QLineEdit *lineEdit_5;
-    QPushButton *search_2;
-    QLabel *label_51;
-    QLineEdit *lineEdit_7;
-    QPushButton *remove;
-    QTableWidget *tableWidget_6;
-    QLabel *PRODUCTS;
     QWidget *orders;
     QTabWidget *tabWidget_3;
     QWidget *newOrder;
     QWidget *box4;
     QPushButton *add;
-    QLabel *neworder;
-    QWidget *widget_7;
     QLineEdit *lineEdit_10;
-    QLineEdit *saisir13;
-    QLineEdit *saisir12;
-    QLineEdit *lineEdit_4;
     QLabel *label_4;
+    QLineEdit *saisir13;
     QLabel *name;
+    QLineEdit *saisir12;
     QLabel *paymentmethod;
+    QLineEdit *lineEdit_4;
     QLabel *date_3;
-    QWidget *widget_8;
-    QLabel *label_16;
+    QLineEdit *lineEdit_6;
+    QLineEdit *lineEdit_14;
+    QLabel *label_15;
+    QLabel *label_22;
+    QLabel *neworder;
     QWidget *consultOrder;
-    QPushButton *pushButton_2;
-    QLabel *label_37;
-    QLineEdit *lineEdit_8;
+    QWidget *widget_9;
+    QTableView *tableView_3;
     QLabel *label_38;
     QLineEdit *lineEdit_9;
     QPushButton *pushButton_3;
-    QTableView *tableView_3;
-    QWidget *widget_9;
+    QLineEdit *lineEdit_8;
+    QLabel *label_37;
+    QPushButton *remove_2;
+    QPushButton *ref;
+    QPushButton *pdf2;
+    QPushButton *trier;
     QWidget *delivery;
     QTabWidget *tabWidget_4;
     QWidget *tab_8;
@@ -157,24 +165,41 @@ public:
     QLabel *numberproduct_2;
     QLabel *name_2;
     QLabel *paymentmethod_2;
-    QLineEdit *saisir10_2;
-    QLineEdit *saisir11_2;
-    QLineEdit *saisir12_2;
-    QLineEdit *saisir13_2;
-    QLineEdit *saisir14_2;
-    QLineEdit *saisir15_2;
-    QPushButton *add_2;
-    QLabel *Delivery_2;
-    QLabel *label_5;
-    QLineEdit *lineEdit_11;
+    QLineEdit *lineEdit_id_L;
+    QLineEdit *lineEdit_id_commande;
+    QLineEdit *lineEdit_adress_L;
+    QLineEdit *lineEdit_num_client;
+    QPushButton *pushButton_ajouter;
+    QListWidget *listWidget_statut_L;
     QWidget *tab_9;
-    QTableWidget *tableWidget_2;
+    QPushButton *pushButton_supprimer;
+    QPushButton *pushButton_modifier;
+    QTableView *tableView_4;
+    QPushButton *pushButton_PDF;
+    QWidget *tab_2;
+    QTableView *tableView_5;
+    QPushButton *pushButton_rechercher;
+    QLineEdit *lineEdit_id_search;
     QLabel *label_6;
-    QLineEdit *lineEdit_12;
-    QPushButton *pushButton_4;
-    QLabel *label_7;
-    QLineEdit *lineEdit_13;
-    QPushButton *pushButton_5;
+    QWidget *tab_11;
+    QLineEdit *lineEdit_id_status;
+    QPushButton *pushButton_status;
+    QLabel *label_16;
+    QProgressBar *progressBar;
+    QLabel *label_5;
+    QWidget *tab_12;
+    QLabel *label_20;
+    QLineEdit *lineEdit_id_feedback;
+    QLineEdit *lineEdit_note;
+    QLabel *label_23;
+    QLabel *label_24;
+    QLabel *label_25;
+    QLabel *label_26;
+    QCheckBox *checkBox;
+    QCheckBox *checkBox_2;
+    QCheckBox *checkBox_3;
+    QLabel *label_27;
+    QPushButton *pushButton_feedback;
     QWidget *canning;
     QWidget *finance;
     QTabWidget *tabWidget_5;
@@ -183,34 +208,32 @@ public:
     QLabel *label_39;
     QLabel *label_40;
     QLabel *label_52;
-    QPushButton *pushButton_8;
-    QLineEdit *lineEdit_18;
-    QLineEdit *lineEdit_19;
-    QLineEdit *lineEdit_20;
-    QLineEdit *lineEdit_22;
-    QLabel *label_54;
+    QPushButton *add_facture_btn;
+    QLineEdit *Id_facture;
+    QLineEdit *Montant_Facture;
+    QDateEdit *dateEditFacture;
+    QLineEdit *Id_facture_modif;
+    QLabel *label_41;
+    QPushButton *searcher_facture_foredit;
+    QPushButton *rfid_btn;
     QWidget *voirfacture;
     QWidget *widget_4;
-    QPushButton *pushButton_7;
-    QPushButton *pushButton_10;
-    QLineEdit *lineEdit_15;
-    QLineEdit *lineEdit_16;
+    QPushButton *Recherche_facture_3;
+    QPushButton *Delete_facture_2;
+    QLineEdit *idfacture_supp_2;
+    QLineEdit *Recherche_facture_4;
     QLabel *label;
     QLabel *label_2;
-    QTableWidget *tableWidget_3;
     QLabel *label_9;
-    QWidget *widget_6;
-    QPushButton *pushButton_9;
-    QPushButton *pushButton_11;
-    QLineEdit *lineEdit_17;
-    QLineEdit *lineEdit_21;
+    QPushButton *PDF_3;
+    QPushButton *Qr_code_btn_2;
+    QLabel *Qrcode_Label_2;
+    QTableView *Tab_facture_2;
+    QComboBox *comboBox_trifactures_2;
     QLabel *label_3;
-    QLabel *label_8;
-    QTableWidget *tableWidget_7;
-    QLabel *label_10;
     QWidget *tab_10;
-    QGraphicsView *graphicsView;
     QGraphicsView *graphicsView_2;
+    QGraphicsView *graphicsView;
     QPushButton *pushButton;
     QWidget *interfaceConnexion;
     QFrame *Box;
@@ -431,7 +454,8 @@ public:
         tabWidget->addTab(newstock, QString());
         voirstock = new QWidget();
         voirstock->setObjectName("voirstock");
-        voirstock->setStyleSheet(QString::fromUtf8("#STOCK\n"
+        voirstock->setStyleSheet(QString::fromUtf8("\n"
+"#STOCK\n"
 "{\n"
 "font: 700 26pt \"Berlin Sans FB Demi\";\n"
 "color:#42b5b2;\n"
@@ -487,9 +511,9 @@ public:
 "#quantity\n"
 "{\n"
 "color:#42b5b2;\n"
-"	font: 700 12pt \"Berlin Sans FB Demi\";\n"
-""
-                        "}\n"
+"	font: 700 12pt \"Berlin Sans FB Demi\";"
+                        "\n"
+"}\n"
 "#remove1\n"
 "{color: #42b5b2; \n"
 "font: 12pt \"Berlin Sans FB\";}\n"
@@ -548,7 +572,7 @@ public:
         remove1->setFont(font);
         search = new QLineEdit(widget);
         search->setObjectName("search");
-        search->setGeometry(QRect(190, 20, 241, 31));
+        search->setGeometry(QRect(190, 20, 181, 31));
         search->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    border: 2px solid #ccc;\n"
 "    border-radius: 5px; \n"
@@ -560,11 +584,11 @@ public:
 "}"));
         label_35 = new QLabel(widget);
         label_35->setObjectName("label_35");
-        label_35->setGeometry(QRect(160, 20, 31, 21));
+        label_35->setGeometry(QRect(150, 20, 31, 21));
         label_35->setStyleSheet(QString::fromUtf8("font: 700 11pt \"Berlin Sans FB Demi\";"));
         searchB = new QPushButton(widget);
         searchB->setObjectName("searchB");
-        searchB->setGeometry(QRect(440, 18, 101, 31));
+        searchB->setGeometry(QRect(380, 20, 101, 31));
         tableView = new QTableView(widget);
         tableView->setObjectName("tableView");
         tableView->setGeometry(QRect(60, 60, 491, 251));
@@ -606,20 +630,24 @@ public:
         STOCK->setGeometry(QRect(-120, 0, 291, 51));
         refresh = new QPushButton(widget);
         refresh->setObjectName("refresh");
-        refresh->setGeometry(QRect(560, 20, 31, 29));
+        refresh->setGeometry(QRect(510, 10, 81, 29));
         QIcon icon;
         icon.addFile(QString::fromUtf8("../189687.png"), QSize(), QIcon::Normal, QIcon::Off);
         refresh->setIcon(icon);
         PDF = new QPushButton(widget);
         PDF->setObjectName("PDF");
-        PDF->setGeometry(QRect(60, 320, 31, 29));
+        PDF->setGeometry(QRect(50, 320, 51, 31));
+        PDF->setStyleSheet(QString::fromUtf8("color:#42b5b2;\n"
+"font: 700 12pt \"Berlin Sans FB Demi\";"));
         QIcon icon1;
         icon1.addFile(QString::fromUtf8("../../Downloads/1092216.png"), QSize(), QIcon::Normal, QIcon::Off);
         PDF->setIcon(icon1);
         PDF->setIconSize(QSize(25, 25));
         tri = new QPushButton(widget);
         tri->setObjectName("tri");
-        tri->setGeometry(QRect(20, 60, 31, 31));
+        tri->setGeometry(QRect(20, 60, 31, 41));
+        tri->setStyleSheet(QString::fromUtf8("color:#42b5b2;\n"
+"font: 700 12pt \"Berlin Sans FB Demi\";"));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8("../../Downloads/127105.png"), QSize(), QIcon::Normal, QIcon::Off);
         tri->setIcon(icon2);
@@ -946,113 +974,6 @@ public:
         tabWidget_2 = new QTabWidget(products);
         tabWidget_2->setObjectName("tabWidget_2");
         tabWidget_2->setGeometry(QRect(0, 0, 961, 491));
-        cooking = new QWidget();
-        cooking->setObjectName("cooking");
-        cooking->setStyleSheet(QString::fromUtf8("#list\n"
-"{\n"
-"	background-color: #f0f0f0;\n"
-"    border: 2px solid #333;\n"
-"    border-radius: 10px;\n"
-"}\n"
-"#listofingredients\n"
-"{\n"
-"font: 700 13pt \"Berlin Sans FB Demi\";\n"
-"color: white;\n"
-"}\n"
-"#widget_10\n"
-"{\n"
-"    background-color: #a0d8d1;  /* Bleu turquoise clair */\n"
-"    border: 2px solid #333;     /* Bordure noire */\n"
-"    border-radius: 10px;        /* Bords arrondis */\n"
-"    padding: 10px;              /* Espacement interne */\n"
-"}\n"
-"\n"
-""));
-        list = new QWidget(cooking);
-        list->setObjectName("list");
-        list->setGeometry(QRect(30, 10, 891, 431));
-        widget_10 = new QWidget(list);
-        widget_10->setObjectName("widget_10");
-        widget_10->setGeometry(QRect(20, 10, 351, 411));
-        listofingredients = new QLabel(widget_10);
-        listofingredients->setObjectName("listofingredients");
-        listofingredients->setGeometry(QRect(20, 10, 201, 41));
-        tabWidget_2->addTab(cooking, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName("tab_3");
-        tab_3->setStyleSheet(QString::fromUtf8("\n"
-"#box1_3\n"
-"{\n"
-"background-color:#fefeff;\n"
-"border-radius:30px #040301;\n"
-"	border: 2px solid #040301;\n"
-"}\n"
-"#saisir7\n"
-"{border:2px solid #42b5b2;\n"
-"}\n"
-"#saisir5\n"
-"{border:2px solid #42b5b2;\n"
-"}\n"
-"#saisir8\n"
-"{border:2px solid #42b5b2;\n"
-"}\n"
-"#saisir9\n"
-"{\n"
-"border:2px solid #42b5b2; \n"
-"}\n"
-"#date_2\n"
-"{\n"
-"	\n"
-"	font: 12pt \"Berlin Sans FB\";\n"
-"}\n"
-"#id2\n"
-"{font: 12pt \"Berlin Sans FB\";\n"
-"}\n"
-"#Product\n"
-"{font: 12pt \"Berlin Sans FB\";\n"
-"}\n"
-"#ADD_3\n"
-"{\n"
-"color: #42b5b2; \n"
-"font: 12pt \"Berlin Sans FB\";\n"
-"}\n"
-"#quantity_2\n"
-"{\n"
-"	font: 12pt \"Berlin Sans FB\";\n"
-"}\n"
-"\n"
-""));
-        box1_3 = new QWidget(tab_3);
-        box1_3->setObjectName("box1_3");
-        box1_3->setGeometry(QRect(250, 20, 411, 411));
-        ADD_3 = new QPushButton(box1_3);
-        ADD_3->setObjectName("ADD_3");
-        ADD_3->setGeometry(QRect(280, 340, 93, 29));
-        Product = new QLabel(box1_3);
-        Product->setObjectName("Product");
-        Product->setGeometry(QRect(30, 40, 131, 20));
-        id2 = new QLabel(box1_3);
-        id2->setObjectName("id2");
-        id2->setGeometry(QRect(30, 100, 63, 20));
-        date_2 = new QLabel(box1_3);
-        date_2->setObjectName("date_2");
-        date_2->setGeometry(QRect(30, 160, 121, 20));
-        saisir9 = new QLineEdit(box1_3);
-        saisir9->setObjectName("saisir9");
-        saisir9->setGeometry(QRect(162, 100, 191, 26));
-        saisir5 = new QLineEdit(box1_3);
-        saisir5->setObjectName("saisir5");
-        saisir5->setGeometry(QRect(162, 40, 191, 26));
-        saisir7 = new QLineEdit(box1_3);
-        saisir7->setObjectName("saisir7");
-        saisir7->setGeometry(QRect(162, 160, 191, 26));
-        quantity_2 = new QLabel(box1_3);
-        quantity_2->setObjectName("quantity_2");
-        quantity_2->setGeometry(QRect(30, 230, 101, 20));
-        saisir8 = new QLineEdit(box1_3);
-        saisir8->setObjectName("saisir8");
-        saisir8->setGeometry(QRect(160, 230, 191, 26));
-        tabWidget_2->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName("tab_4");
         tab_4->setStyleSheet(QString::fromUtf8("#PRODUCTS\n"
@@ -1180,15 +1101,128 @@ public:
         PRODUCTS->setObjectName("PRODUCTS");
         PRODUCTS->setGeometry(QRect(380, 0, 191, 61));
         tabWidget_2->addTab(tab_4, QString());
+        cooking = new QWidget();
+        cooking->setObjectName("cooking");
+        cooking->setStyleSheet(QString::fromUtf8("#list\n"
+"{\n"
+"	background-color: #f0f0f0;\n"
+"    border: 2px solid #333;\n"
+"    border-radius: 10px;\n"
+"}\n"
+"#listofingredients\n"
+"{\n"
+"font: 700 13pt \"Berlin Sans FB Demi\";\n"
+"color: white;\n"
+"}\n"
+"#widget_10\n"
+"{\n"
+"    background-color: #a0d8d1;  /* Bleu turquoise clair */\n"
+"    border: 2px solid #333;     /* Bordure noire */\n"
+"    border-radius: 10px;        /* Bords arrondis */\n"
+"    padding: 10px;              /* Espacement interne */\n"
+"}\n"
+"\n"
+""));
+        list = new QWidget(cooking);
+        list->setObjectName("list");
+        list->setGeometry(QRect(30, 10, 891, 431));
+        widget_10 = new QWidget(list);
+        widget_10->setObjectName("widget_10");
+        widget_10->setGeometry(QRect(20, 10, 351, 411));
+        listofingredients = new QLabel(widget_10);
+        listofingredients->setObjectName("listofingredients");
+        listofingredients->setGeometry(QRect(20, 10, 201, 41));
+        tabWidget_2->addTab(cooking, QString());
+        tab_3 = new QWidget();
+        tab_3->setObjectName("tab_3");
+        tab_3->setStyleSheet(QString::fromUtf8("\n"
+"#box1_3\n"
+"{\n"
+"background-color:#fefeff;\n"
+"border-radius:30px #040301;\n"
+"	border: 2px solid #040301;\n"
+"}\n"
+"#saisir7\n"
+"{border:2px solid #42b5b2;\n"
+"}\n"
+"#saisir5\n"
+"{border:2px solid #42b5b2;\n"
+"}\n"
+"#saisir8\n"
+"{border:2px solid #42b5b2;\n"
+"}\n"
+"#saisir9\n"
+"{\n"
+"border:2px solid #42b5b2; \n"
+"}\n"
+"#date_2\n"
+"{\n"
+"	\n"
+"	font: 12pt \"Berlin Sans FB\";\n"
+"}\n"
+"#id2\n"
+"{font: 12pt \"Berlin Sans FB\";\n"
+"}\n"
+"#Product\n"
+"{font: 12pt \"Berlin Sans FB\";\n"
+"}\n"
+"#ADD_3\n"
+"{\n"
+"color: #42b5b2; \n"
+"font: 12pt \"Berlin Sans FB\";\n"
+"}\n"
+"#quantity_2\n"
+"{\n"
+"	font: 12pt \"Berlin Sans FB\";\n"
+"}\n"
+"\n"
+""));
+        box1_3 = new QWidget(tab_3);
+        box1_3->setObjectName("box1_3");
+        box1_3->setGeometry(QRect(250, 20, 411, 411));
+        ADD_3 = new QPushButton(box1_3);
+        ADD_3->setObjectName("ADD_3");
+        ADD_3->setGeometry(QRect(280, 340, 93, 29));
+        Product = new QLabel(box1_3);
+        Product->setObjectName("Product");
+        Product->setGeometry(QRect(30, 40, 131, 20));
+        id2 = new QLabel(box1_3);
+        id2->setObjectName("id2");
+        id2->setGeometry(QRect(30, 100, 63, 20));
+        date_2 = new QLabel(box1_3);
+        date_2->setObjectName("date_2");
+        date_2->setGeometry(QRect(30, 160, 121, 20));
+        saisir9 = new QLineEdit(box1_3);
+        saisir9->setObjectName("saisir9");
+        saisir9->setGeometry(QRect(162, 100, 191, 26));
+        saisir5 = new QLineEdit(box1_3);
+        saisir5->setObjectName("saisir5");
+        saisir5->setGeometry(QRect(162, 40, 191, 26));
+        saisir7 = new QLineEdit(box1_3);
+        saisir7->setObjectName("saisir7");
+        saisir7->setGeometry(QRect(162, 160, 191, 26));
+        quantity_2 = new QLabel(box1_3);
+        quantity_2->setObjectName("quantity_2");
+        quantity_2->setGeometry(QRect(30, 230, 101, 20));
+        saisir8 = new QLineEdit(box1_3);
+        saisir8->setObjectName("saisir8");
+        saisir8->setGeometry(QRect(160, 230, 191, 26));
+        tabWidget_2->addTab(tab_3, QString());
         modules->addTab(products, QString());
         orders = new QWidget();
         orders->setObjectName("orders");
         tabWidget_3 = new QTabWidget(orders);
         tabWidget_3->setObjectName("tabWidget_3");
-        tabWidget_3->setGeometry(QRect(0, 0, 961, 491));
+        tabWidget_3->setGeometry(QRect(0, 0, 971, 521));
         newOrder = new QWidget();
         newOrder->setObjectName("newOrder");
-        newOrder->setStyleSheet(QString::fromUtf8("#neworder\n"
+        newOrder->setStyleSheet(QString::fromUtf8("#label_15\n"
+"{font: 12pt \"Berlin Sans FB\";\n"
+"}\n"
+"#label_22\n"
+"{font: 12pt \"Berlin Sans FB\";\n"
+"}\n"
+"#neworder\n"
 "{\n"
 "font: 700 23pt \"Berlin Sans FB Demi\";\n"
 "color:#42b5b2;\n"
@@ -1222,7 +1256,8 @@ public:
 "{border:2px solid #42b5b2;\n"
 "}\n"
 "#saisir11\n"
-"{border:2px solid #42b5b2;\n"
+"{border:2px solid #42b5b2;"
+                        "\n"
 "}\n"
 "#saisir12\n"
 "{border:2px solid #42b5b2;\n"
@@ -1230,8 +1265,7 @@ public:
 "#saisir13\n"
 "{\n"
 "border:2px solid #42b5b2; \n"
-""
-                        "}\n"
+"}\n"
 "#saisir14\n"
 "{\n"
 "border:2px solid #42b5b2; \n"
@@ -1280,25 +1314,13 @@ public:
 ""));
         box4 = new QWidget(newOrder);
         box4->setObjectName("box4");
-        box4->setGeometry(QRect(70, 10, 801, 441));
+        box4->setGeometry(QRect(230, 50, 471, 401));
         add = new QPushButton(box4);
         add->setObjectName("add");
-        add->setGeometry(QRect(680, 400, 93, 29));
-        neworder = new QLabel(box4);
-        neworder->setObjectName("neworder");
-        neworder->setGeometry(QRect(10, 10, 241, 31));
-        widget_7 = new QWidget(box4);
-        widget_7->setObjectName("widget_7");
-        widget_7->setGeometry(QRect(30, 80, 401, 301));
-        widget_7->setStyleSheet(QString::fromUtf8("#box4 {\n"
-"    background-color: #a0d8d1;  /* Bleu turquoise clair */\n"
-"    border: 2px solid #333;     /* Bordure noire */\n"
-"    border-radius: 10px;        /* Bords arrondis */\n"
-"    padding: 10px;              /* Espacement interne */\n"
-"}"));
-        lineEdit_10 = new QLineEdit(widget_7);
+        add->setGeometry(QRect(310, 340, 93, 29));
+        lineEdit_10 = new QLineEdit(box4);
         lineEdit_10->setObjectName("lineEdit_10");
-        lineEdit_10->setGeometry(QRect(190, 50, 181, 26));
+        lineEdit_10->setGeometry(QRect(270, 30, 181, 26));
         lineEdit_10->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    border: 2px solid #ccc;\n"
 "    border-radius: 5px; \n"
@@ -1308,9 +1330,12 @@ public:
 "QLineEdit:focus {\n"
 "    border: 2px solid #42b5b2; \n"
 "}"));
-        saisir13 = new QLineEdit(widget_7);
+        label_4 = new QLabel(box4);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(60, 30, 191, 20));
+        saisir13 = new QLineEdit(box4);
         saisir13->setObjectName("saisir13");
-        saisir13->setGeometry(QRect(190, 100, 181, 26));
+        saisir13->setGeometry(QRect(270, 80, 181, 26));
         saisir13->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    border: 2px solid #ccc;\n"
 "    border-radius: 5px; \n"
@@ -1320,9 +1345,12 @@ public:
 "QLineEdit:focus {\n"
 "    border: 2px solid #42b5b2; \n"
 "}"));
-        saisir12 = new QLineEdit(widget_7);
+        name = new QLabel(box4);
+        name->setObjectName("name");
+        name->setGeometry(QRect(60, 80, 121, 20));
+        saisir12 = new QLineEdit(box4);
         saisir12->setObjectName("saisir12");
-        saisir12->setGeometry(QRect(190, 150, 181, 26));
+        saisir12->setGeometry(QRect(270, 130, 181, 26));
         saisir12->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    border: 2px solid #ccc;\n"
 "    border-radius: 5px; \n"
@@ -1332,9 +1360,12 @@ public:
 "QLineEdit:focus {\n"
 "    border: 2px solid #42b5b2; \n"
 "}"));
-        lineEdit_4 = new QLineEdit(widget_7);
+        paymentmethod = new QLabel(box4);
+        paymentmethod->setObjectName("paymentmethod");
+        paymentmethod->setGeometry(QRect(60, 130, 161, 20));
+        lineEdit_4 = new QLineEdit(box4);
         lineEdit_4->setObjectName("lineEdit_4");
-        lineEdit_4->setGeometry(QRect(190, 200, 181, 26));
+        lineEdit_4->setGeometry(QRect(270, 180, 181, 26));
         lineEdit_4->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    border: 2px solid #ccc;\n"
 "    border-radius: 5px; \n"
@@ -1344,32 +1375,50 @@ public:
 "QLineEdit:focus {\n"
 "    border: 2px solid #42b5b2; \n"
 "}"));
-        label_4 = new QLabel(widget_7);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(10, 50, 191, 20));
-        name = new QLabel(widget_7);
-        name->setObjectName("name");
-        name->setGeometry(QRect(10, 100, 121, 20));
-        paymentmethod = new QLabel(widget_7);
-        paymentmethod->setObjectName("paymentmethod");
-        paymentmethod->setGeometry(QRect(10, 150, 161, 20));
-        date_3 = new QLabel(widget_7);
+        date_3 = new QLabel(box4);
         date_3->setObjectName("date_3");
-        date_3->setGeometry(QRect(10, 200, 161, 20));
-        widget_8 = new QWidget(box4);
-        widget_8->setObjectName("widget_8");
-        widget_8->setGeometry(QRect(450, 20, 331, 361));
-        label_16 = new QLabel(widget_8);
-        label_16->setObjectName("label_16");
-        label_16->setGeometry(QRect(10, 10, 141, 31));
-        widget_7->raise();
-        add->raise();
-        neworder->raise();
-        widget_8->raise();
+        date_3->setGeometry(QRect(60, 180, 161, 20));
+        lineEdit_6 = new QLineEdit(box4);
+        lineEdit_6->setObjectName("lineEdit_6");
+        lineEdit_6->setGeometry(QRect(270, 230, 181, 26));
+        lineEdit_6->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    border: 2px solid #ccc;\n"
+"    border-radius: 5px; \n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #42b5b2; \n"
+"}"));
+        lineEdit_14 = new QLineEdit(box4);
+        lineEdit_14->setObjectName("lineEdit_14");
+        lineEdit_14->setGeometry(QRect(270, 280, 181, 26));
+        lineEdit_14->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    border: 2px solid #ccc;\n"
+"    border-radius: 5px; \n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #42b5b2; \n"
+"}"));
+        label_15 = new QLabel(box4);
+        label_15->setObjectName("label_15");
+        label_15->setGeometry(QRect(60, 230, 161, 20));
+        label_22 = new QLabel(box4);
+        label_22->setObjectName("label_22");
+        label_22->setGeometry(QRect(60, 280, 191, 20));
+        neworder = new QLabel(newOrder);
+        neworder->setObjectName("neworder");
+        neworder->setGeometry(QRect(360, 10, 241, 31));
         tabWidget_3->addTab(newOrder, QString());
         consultOrder = new QWidget();
         consultOrder->setObjectName("consultOrder");
-        consultOrder->setStyleSheet(QString::fromUtf8("\n"
+        consultOrder->setStyleSheet(QString::fromUtf8("#widget_9\n"
+"{background-color: #f0f0f0;\n"
+"    border: 2px solid #333;\n"
+"    border-radius: 10px;\n"
+"}\n"
 "#lineEdit_8\n"
 "{\n"
 "border:2px solid #42b5b2; \n"
@@ -1391,45 +1440,113 @@ public:
 "color: #42b5b2; \n"
 "font: 12pt \"Berlin Sans FB\";\n"
 "}\n"
-"#pushButton_2\n"
+"#remove_2\n"
 "{\n"
 "color: #42b5b2; \n"
 "font: 12pt \"Berlin Sans FB\";\n"
 "}\n"
-"\n"
+"#trier\n"
+"{color: #42b5b2; \n"
+"font: 12pt \"Berlin Sans FB\";}\n"
+"#ref\n"
+"{color: #42b5b2; \n"
+"font: 12pt \"Berlin Sans FB\";}\n"
+"#pdf2\n"
+"{color: #42b5b2; \n"
+"font: 12pt \"Berlin Sans FB\";}\n"
 "\n"
 ""));
-        pushButton_2 = new QPushButton(consultOrder);
-        pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(640, 380, 93, 29));
-        label_37 = new QLabel(consultOrder);
-        label_37->setObjectName("label_37");
-        label_37->setGeometry(QRect(320, 380, 151, 21));
-        lineEdit_8 = new QLineEdit(consultOrder);
-        lineEdit_8->setObjectName("lineEdit_8");
-        lineEdit_8->setGeometry(QRect(480, 380, 151, 26));
-        label_38 = new QLabel(consultOrder);
-        label_38->setObjectName("label_38");
-        label_38->setGeometry(QRect(212, 40, 151, 20));
-        lineEdit_9 = new QLineEdit(consultOrder);
-        lineEdit_9->setObjectName("lineEdit_9");
-        lineEdit_9->setGeometry(QRect(360, 40, 113, 26));
-        pushButton_3 = new QPushButton(consultOrder);
-        pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(500, 40, 93, 29));
-        tableView_3 = new QTableView(consultOrder);
-        tableView_3->setObjectName("tableView_3");
-        tableView_3->setGeometry(QRect(160, 110, 256, 192));
         widget_9 = new QWidget(consultOrder);
         widget_9->setObjectName("widget_9");
-        widget_9->setGeometry(QRect(50, 60, 120, 80));
+        widget_9->setGeometry(QRect(60, 20, 851, 431));
+        tableView_3 = new QTableView(widget_9);
+        tableView_3->setObjectName("tableView_3");
+        tableView_3->setGeometry(QRect(50, 70, 751, 251));
+        tableView_3->setStyleSheet(QString::fromUtf8("QTableView {\n"
+"    background-color: #f0f0f0;\n"
+"    alternate-background-color: #e0e0e0;\n"
+"    gridline-color: #d0d0d0;\n"
+"    border: 1px solid #c0c0c0;\n"
+"}\n"
+"QHeaderView::section {\n"
+"    background-color: #3a3a3a;\n"
+"    color: white;\n"
+"    font-weight: bold;\n"
+"    padding: 4px;\n"
+"    border: 1px solid #c0c0c0;\n"
+"}\n"
+"QTableView::item {\n"
+"    padding: 5px;\n"
+"    border: none;\n"
+"}\n"
+"QTableView::item:selected {\n"
+"    background-color: #ffa726;\n"
+"    color: white;\n"
+"}\n"
+"QScrollBar:vertical {\n"
+"    background: #f0f0f0;\n"
+"    width: 10px;\n"
+"    margin: 20px 0 20px 0;\n"
+"}\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #a0a0a0;\n"
+"    min-height: 20px;\n"
+"}\n"
+"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
+"    background: none;\n"
+"}"));
+        label_38 = new QLabel(widget_9);
+        label_38->setObjectName("label_38");
+        label_38->setGeometry(QRect(130, 20, 151, 20));
+        lineEdit_9 = new QLineEdit(widget_9);
+        lineEdit_9->setObjectName("lineEdit_9");
+        lineEdit_9->setGeometry(QRect(290, 20, 141, 26));
+        lineEdit_9->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    border: 2px solid #ccc;\n"
+"    border-radius: 5px; \n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #42b5b2; \n"
+"}"));
+        pushButton_3 = new QPushButton(widget_9);
+        pushButton_3->setObjectName("pushButton_3");
+        pushButton_3->setGeometry(QRect(450, 20, 93, 29));
+        lineEdit_8 = new QLineEdit(widget_9);
+        lineEdit_8->setObjectName("lineEdit_8");
+        lineEdit_8->setGeometry(QRect(480, 350, 151, 26));
+        lineEdit_8->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
+"    border: 2px solid #ccc;\n"
+"    border-radius: 5px; \n"
+"    padding: 5px;\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    border: 2px solid #42b5b2; \n"
+"}"));
+        label_37 = new QLabel(widget_9);
+        label_37->setObjectName("label_37");
+        label_37->setGeometry(QRect(320, 350, 151, 21));
+        remove_2 = new QPushButton(widget_9);
+        remove_2->setObjectName("remove_2");
+        remove_2->setGeometry(QRect(640, 350, 93, 29));
+        ref = new QPushButton(widget_9);
+        ref->setObjectName("ref");
+        ref->setGeometry(QRect(760, 10, 81, 41));
+        pdf2 = new QPushButton(widget_9);
+        pdf2->setObjectName("pdf2");
+        pdf2->setGeometry(QRect(50, 330, 51, 29));
+        trier = new QPushButton(widget_9);
+        trier->setObjectName("trier");
+        trier->setGeometry(QRect(50, 30, 41, 31));
         tabWidget_3->addTab(consultOrder, QString());
         modules->addTab(orders, QString());
         delivery = new QWidget();
         delivery->setObjectName("delivery");
         tabWidget_4 = new QTabWidget(delivery);
         tabWidget_4->setObjectName("tabWidget_4");
-        tabWidget_4->setGeometry(QRect(0, 0, 961, 491));
+        tabWidget_4->setGeometry(QRect(10, 0, 961, 491));
         tab_8 = new QWidget();
         tab_8->setObjectName("tab_8");
         tab_8->setStyleSheet(QString::fromUtf8("\n"
@@ -1501,52 +1618,44 @@ public:
 ""));
         box4_2 = new QWidget(tab_8);
         box4_2->setObjectName("box4_2");
-        box4_2->setGeometry(QRect(250, 10, 441, 421));
+        box4_2->setGeometry(QRect(250, 10, 441, 391));
         nameproduct_2 = new QLabel(box4_2);
         nameproduct_2->setObjectName("nameproduct_2");
         nameproduct_2->setGeometry(QRect(20, 90, 81, 20));
         Price_2 = new QLabel(box4_2);
         Price_2->setObjectName("Price_2");
-        Price_2->setGeometry(QRect(20, 240, 141, 20));
+        Price_2->setGeometry(QRect(20, 190, 141, 20));
         numberproduct_2 = new QLabel(box4_2);
         numberproduct_2->setObjectName("numberproduct_2");
         numberproduct_2->setGeometry(QRect(20, 40, 181, 20));
         name_2 = new QLabel(box4_2);
         name_2->setObjectName("name_2");
-        name_2->setGeometry(QRect(20, 190, 121, 20));
+        name_2->setGeometry(QRect(20, 140, 121, 20));
         paymentmethod_2 = new QLabel(box4_2);
         paymentmethod_2->setObjectName("paymentmethod_2");
-        paymentmethod_2->setGeometry(QRect(20, 330, 161, 20));
-        saisir10_2 = new QLineEdit(box4_2);
-        saisir10_2->setObjectName("saisir10_2");
-        saisir10_2->setGeometry(QRect(220, 40, 181, 26));
-        saisir11_2 = new QLineEdit(box4_2);
-        saisir11_2->setObjectName("saisir11_2");
-        saisir11_2->setGeometry(QRect(220, 90, 181, 26));
-        saisir12_2 = new QLineEdit(box4_2);
-        saisir12_2->setObjectName("saisir12_2");
-        saisir12_2->setGeometry(QRect(220, 330, 181, 26));
-        saisir13_2 = new QLineEdit(box4_2);
-        saisir13_2->setObjectName("saisir13_2");
-        saisir13_2->setGeometry(QRect(220, 190, 181, 26));
-        saisir14_2 = new QLineEdit(box4_2);
-        saisir14_2->setObjectName("saisir14_2");
-        saisir14_2->setGeometry(QRect(220, 240, 181, 26));
-        saisir15_2 = new QLineEdit(box4_2);
-        saisir15_2->setObjectName("saisir15_2");
-        saisir15_2->setGeometry(QRect(220, 290, 181, 26));
-        add_2 = new QPushButton(box4_2);
-        add_2->setObjectName("add_2");
-        add_2->setGeometry(QRect(300, 370, 93, 29));
-        Delivery_2 = new QLabel(box4_2);
-        Delivery_2->setObjectName("Delivery_2");
-        Delivery_2->setGeometry(QRect(20, 290, 161, 20));
-        label_5 = new QLabel(box4_2);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(20, 140, 191, 20));
-        lineEdit_11 = new QLineEdit(box4_2);
-        lineEdit_11->setObjectName("lineEdit_11");
-        lineEdit_11->setGeometry(QRect(220, 140, 181, 26));
+        paymentmethod_2->setGeometry(QRect(20, 240, 161, 20));
+        lineEdit_id_L = new QLineEdit(box4_2);
+        lineEdit_id_L->setObjectName("lineEdit_id_L");
+        lineEdit_id_L->setGeometry(QRect(220, 40, 181, 26));
+        lineEdit_id_commande = new QLineEdit(box4_2);
+        lineEdit_id_commande->setObjectName("lineEdit_id_commande");
+        lineEdit_id_commande->setGeometry(QRect(220, 90, 181, 26));
+        lineEdit_adress_L = new QLineEdit(box4_2);
+        lineEdit_adress_L->setObjectName("lineEdit_adress_L");
+        lineEdit_adress_L->setGeometry(QRect(220, 140, 181, 26));
+        lineEdit_num_client = new QLineEdit(box4_2);
+        lineEdit_num_client->setObjectName("lineEdit_num_client");
+        lineEdit_num_client->setGeometry(QRect(220, 190, 181, 26));
+        pushButton_ajouter = new QPushButton(box4_2);
+        pushButton_ajouter->setObjectName("pushButton_ajouter");
+        pushButton_ajouter->setGeometry(QRect(160, 330, 93, 29));
+        listWidget_statut_L = new QListWidget(box4_2);
+        new QListWidgetItem(listWidget_statut_L);
+        new QListWidgetItem(listWidget_statut_L);
+        new QListWidgetItem(listWidget_statut_L);
+        new QListWidgetItem(listWidget_statut_L);
+        listWidget_statut_L->setObjectName("listWidget_statut_L");
+        listWidget_statut_L->setGeometry(QRect(160, 240, 256, 71));
         tabWidget_4->addTab(tab_8, QString());
         tab_9 = new QWidget();
         tab_9->setObjectName("tab_9");
@@ -1579,61 +1688,96 @@ public:
 "\n"
 "\n"
 ""));
-        tableWidget_2 = new QTableWidget(tab_9);
-        if (tableWidget_2->columnCount() < 7)
-            tableWidget_2->setColumnCount(7);
-        QTableWidgetItem *__qtablewidgetitem30 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(0, __qtablewidgetitem30);
-        QTableWidgetItem *__qtablewidgetitem31 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(1, __qtablewidgetitem31);
-        QTableWidgetItem *__qtablewidgetitem32 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(2, __qtablewidgetitem32);
-        QTableWidgetItem *__qtablewidgetitem33 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(3, __qtablewidgetitem33);
-        QTableWidgetItem *__qtablewidgetitem34 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(4, __qtablewidgetitem34);
-        QTableWidgetItem *__qtablewidgetitem35 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(5, __qtablewidgetitem35);
-        QTableWidgetItem *__qtablewidgetitem36 = new QTableWidgetItem();
-        tableWidget_2->setHorizontalHeaderItem(6, __qtablewidgetitem36);
-        if (tableWidget_2->rowCount() < 7)
-            tableWidget_2->setRowCount(7);
-        QTableWidgetItem *__qtablewidgetitem37 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(0, __qtablewidgetitem37);
-        QTableWidgetItem *__qtablewidgetitem38 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(1, __qtablewidgetitem38);
-        QTableWidgetItem *__qtablewidgetitem39 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(2, __qtablewidgetitem39);
-        QTableWidgetItem *__qtablewidgetitem40 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(3, __qtablewidgetitem40);
-        QTableWidgetItem *__qtablewidgetitem41 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(4, __qtablewidgetitem41);
-        QTableWidgetItem *__qtablewidgetitem42 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(5, __qtablewidgetitem42);
-        QTableWidgetItem *__qtablewidgetitem43 = new QTableWidgetItem();
-        tableWidget_2->setVerticalHeaderItem(6, __qtablewidgetitem43);
-        tableWidget_2->setObjectName("tableWidget_2");
-        tableWidget_2->setGeometry(QRect(40, 70, 901, 281));
-        tableWidget_2->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Berlin Sans FB Demi\";"));
-        label_6 = new QLabel(tab_9);
-        label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(170, 30, 161, 21));
-        lineEdit_12 = new QLineEdit(tab_9);
-        lineEdit_12->setObjectName("lineEdit_12");
-        lineEdit_12->setGeometry(QRect(340, 30, 113, 26));
-        pushButton_4 = new QPushButton(tab_9);
-        pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(470, 30, 93, 29));
-        label_7 = new QLabel(tab_9);
-        label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(410, 380, 151, 21));
-        lineEdit_13 = new QLineEdit(tab_9);
-        lineEdit_13->setObjectName("lineEdit_13");
-        lineEdit_13->setGeometry(QRect(580, 380, 113, 26));
-        pushButton_5 = new QPushButton(tab_9);
-        pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(710, 380, 93, 29));
+        pushButton_supprimer = new QPushButton(tab_9);
+        pushButton_supprimer->setObjectName("pushButton_supprimer");
+        pushButton_supprimer->setGeometry(QRect(400, 340, 93, 29));
+        pushButton_modifier = new QPushButton(tab_9);
+        pushButton_modifier->setObjectName("pushButton_modifier");
+        pushButton_modifier->setGeometry(QRect(410, 30, 93, 29));
+        tableView_4 = new QTableView(tab_9);
+        tableView_4->setObjectName("tableView_4");
+        tableView_4->setGeometry(QRect(210, 80, 541, 251));
+        tableView_4->setBaseSize(QSize(0, 0));
+        tableView_4->setLineWidth(1);
+        tableView_4->setMidLineWidth(0);
+        pushButton_PDF = new QPushButton(tab_9);
+        pushButton_PDF->setObjectName("pushButton_PDF");
+        pushButton_PDF->setGeometry(QRect(650, 30, 93, 29));
         tabWidget_4->addTab(tab_9, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName("tab_2");
+        tableView_5 = new QTableView(tab_2);
+        tableView_5->setObjectName("tableView_5");
+        tableView_5->setGeometry(QRect(90, 110, 561, 192));
+        pushButton_rechercher = new QPushButton(tab_2);
+        pushButton_rechercher->setObjectName("pushButton_rechercher");
+        pushButton_rechercher->setGeometry(QRect(440, 50, 93, 29));
+        lineEdit_id_search = new QLineEdit(tab_2);
+        lineEdit_id_search->setObjectName("lineEdit_id_search");
+        lineEdit_id_search->setGeometry(QRect(310, 50, 113, 26));
+        label_6 = new QLabel(tab_2);
+        label_6->setObjectName("label_6");
+        label_6->setGeometry(QRect(170, 50, 111, 21));
+        tabWidget_4->addTab(tab_2, QString());
+        tab_11 = new QWidget();
+        tab_11->setObjectName("tab_11");
+        lineEdit_id_status = new QLineEdit(tab_11);
+        lineEdit_id_status->setObjectName("lineEdit_id_status");
+        lineEdit_id_status->setGeometry(QRect(360, 80, 113, 26));
+        pushButton_status = new QPushButton(tab_11);
+        pushButton_status->setObjectName("pushButton_status");
+        pushButton_status->setGeometry(QRect(500, 80, 93, 29));
+        label_16 = new QLabel(tab_11);
+        label_16->setObjectName("label_16");
+        label_16->setGeometry(QRect(200, 80, 141, 21));
+        progressBar = new QProgressBar(tab_11);
+        progressBar->setObjectName("progressBar");
+        progressBar->setGeometry(QRect(190, 160, 471, 31));
+        progressBar->setValue(0);
+        progressBar->setTextVisible(false);
+        label_5 = new QLabel(tab_11);
+        label_5->setObjectName("label_5");
+        label_5->setGeometry(QRect(380, 210, 101, 41));
+        tabWidget_4->addTab(tab_11, QString());
+        tab_12 = new QWidget();
+        tab_12->setObjectName("tab_12");
+        label_20 = new QLabel(tab_12);
+        label_20->setObjectName("label_20");
+        label_20->setGeometry(QRect(190, 30, 141, 21));
+        lineEdit_id_feedback = new QLineEdit(tab_12);
+        lineEdit_id_feedback->setObjectName("lineEdit_id_feedback");
+        lineEdit_id_feedback->setGeometry(QRect(350, 30, 113, 26));
+        lineEdit_note = new QLineEdit(tab_12);
+        lineEdit_note->setObjectName("lineEdit_note");
+        lineEdit_note->setGeometry(QRect(220, 80, 381, 171));
+        label_23 = new QLabel(tab_12);
+        label_23->setObjectName("label_23");
+        label_23->setGeometry(QRect(60, 150, 141, 21));
+        label_24 = new QLabel(tab_12);
+        label_24->setObjectName("label_24");
+        label_24->setGeometry(QRect(280, 270, 61, 61));
+        label_25 = new QLabel(tab_12);
+        label_25->setObjectName("label_25");
+        label_25->setGeometry(QRect(390, 270, 71, 61));
+        label_26 = new QLabel(tab_12);
+        label_26->setObjectName("label_26");
+        label_26->setGeometry(QRect(490, 270, 61, 61));
+        checkBox = new QCheckBox(tab_12);
+        checkBox->setObjectName("checkBox");
+        checkBox->setGeometry(QRect(300, 340, 78, 22));
+        checkBox_2 = new QCheckBox(tab_12);
+        checkBox_2->setObjectName("checkBox_2");
+        checkBox_2->setGeometry(QRect(420, 340, 78, 22));
+        checkBox_3 = new QCheckBox(tab_12);
+        checkBox_3->setObjectName("checkBox_3");
+        checkBox_3->setGeometry(QRect(520, 340, 78, 22));
+        label_27 = new QLabel(tab_12);
+        label_27->setObjectName("label_27");
+        label_27->setGeometry(QRect(110, 300, 141, 21));
+        pushButton_feedback = new QPushButton(tab_12);
+        pushButton_feedback->setObjectName("pushButton_feedback");
+        pushButton_feedback->setGeometry(QRect(350, 390, 93, 29));
+        tabWidget_4->addTab(tab_12, QString());
         modules->addTab(delivery, QString());
         canning = new QWidget();
         canning->setObjectName("canning");
@@ -1681,34 +1825,41 @@ public:
 ""));
         widget_5 = new QWidget(nvfacture);
         widget_5->setObjectName("widget_5");
-        widget_5->setGeometry(QRect(260, 20, 401, 401));
+        widget_5->setGeometry(QRect(330, 10, 411, 401));
         label_39 = new QLabel(widget_5);
         label_39->setObjectName("label_39");
-        label_39->setGeometry(QRect(50, 70, 71, 20));
+        label_39->setGeometry(QRect(80, 70, 71, 20));
         label_40 = new QLabel(widget_5);
         label_40->setObjectName("label_40");
-        label_40->setGeometry(QRect(50, 120, 81, 20));
+        label_40->setGeometry(QRect(60, 120, 81, 20));
         label_52 = new QLabel(widget_5);
         label_52->setObjectName("label_52");
-        label_52->setGeometry(QRect(50, 170, 63, 20));
-        pushButton_8 = new QPushButton(widget_5);
-        pushButton_8->setObjectName("pushButton_8");
-        pushButton_8->setGeometry(QRect(240, 310, 93, 29));
-        lineEdit_18 = new QLineEdit(widget_5);
-        lineEdit_18->setObjectName("lineEdit_18");
-        lineEdit_18->setGeometry(QRect(140, 70, 113, 26));
-        lineEdit_19 = new QLineEdit(widget_5);
-        lineEdit_19->setObjectName("lineEdit_19");
-        lineEdit_19->setGeometry(QRect(140, 120, 113, 26));
-        lineEdit_20 = new QLineEdit(widget_5);
-        lineEdit_20->setObjectName("lineEdit_20");
-        lineEdit_20->setGeometry(QRect(140, 170, 113, 26));
-        lineEdit_22 = new QLineEdit(widget_5);
-        lineEdit_22->setObjectName("lineEdit_22");
-        lineEdit_22->setGeometry(QRect(140, 220, 113, 26));
-        label_54 = new QLabel(widget_5);
-        label_54->setObjectName("label_54");
-        label_54->setGeometry(QRect(50, 220, 63, 20));
+        label_52->setGeometry(QRect(60, 170, 63, 20));
+        add_facture_btn = new QPushButton(widget_5);
+        add_facture_btn->setObjectName("add_facture_btn");
+        add_facture_btn->setGeometry(QRect(160, 240, 93, 29));
+        Id_facture = new QLineEdit(widget_5);
+        Id_facture->setObjectName("Id_facture");
+        Id_facture->setGeometry(QRect(140, 70, 113, 26));
+        Montant_Facture = new QLineEdit(widget_5);
+        Montant_Facture->setObjectName("Montant_Facture");
+        Montant_Facture->setGeometry(QRect(140, 120, 113, 26));
+        dateEditFacture = new QDateEdit(widget_5);
+        dateEditFacture->setObjectName("dateEditFacture");
+        dateEditFacture->setGeometry(QRect(140, 170, 110, 22));
+        Id_facture_modif = new QLineEdit(widget_5);
+        Id_facture_modif->setObjectName("Id_facture_modif");
+        Id_facture_modif->setEnabled(true);
+        Id_facture_modif->setGeometry(QRect(200, 330, 113, 26));
+        label_41 = new QLabel(widget_5);
+        label_41->setObjectName("label_41");
+        label_41->setGeometry(QRect(110, 330, 91, 20));
+        searcher_facture_foredit = new QPushButton(widget_5);
+        searcher_facture_foredit->setObjectName("searcher_facture_foredit");
+        searcher_facture_foredit->setGeometry(QRect(330, 330, 93, 29));
+        rfid_btn = new QPushButton(widget_5);
+        rfid_btn->setObjectName("rfid_btn");
+        rfid_btn->setGeometry(QRect(270, 70, 93, 29));
         tabWidget_5->addTab(nvfacture, QString());
         voirfacture = new QWidget();
         voirfacture->setObjectName("voirfacture");
@@ -1781,104 +1932,50 @@ public:
 ""));
         widget_4 = new QWidget(voirfacture);
         widget_4->setObjectName("widget_4");
-        widget_4->setGeometry(QRect(40, 30, 431, 391));
-        pushButton_7 = new QPushButton(widget_4);
-        pushButton_7->setObjectName("pushButton_7");
-        pushButton_7->setGeometry(QRect(320, 20, 93, 29));
-        pushButton_10 = new QPushButton(widget_4);
-        pushButton_10->setObjectName("pushButton_10");
-        pushButton_10->setGeometry(QRect(290, 340, 93, 29));
-        lineEdit_15 = new QLineEdit(widget_4);
-        lineEdit_15->setObjectName("lineEdit_15");
-        lineEdit_15->setGeometry(QRect(160, 340, 113, 26));
-        lineEdit_16 = new QLineEdit(widget_4);
-        lineEdit_16->setObjectName("lineEdit_16");
-        lineEdit_16->setGeometry(QRect(200, 20, 113, 26));
+        widget_4->setGeometry(QRect(130, 0, 671, 391));
+        Recherche_facture_3 = new QPushButton(widget_4);
+        Recherche_facture_3->setObjectName("Recherche_facture_3");
+        Recherche_facture_3->setGeometry(QRect(320, 20, 93, 29));
+        Delete_facture_2 = new QPushButton(widget_4);
+        Delete_facture_2->setObjectName("Delete_facture_2");
+        Delete_facture_2->setGeometry(QRect(490, 120, 93, 29));
+        idfacture_supp_2 = new QLineEdit(widget_4);
+        idfacture_supp_2->setObjectName("idfacture_supp_2");
+        idfacture_supp_2->setGeometry(QRect(490, 90, 113, 26));
+        Recherche_facture_4 = new QLineEdit(widget_4);
+        Recherche_facture_4->setObjectName("Recherche_facture_4");
+        Recherche_facture_4->setGeometry(QRect(200, 20, 113, 26));
         label = new QLabel(widget_4);
         label->setObjectName("label");
-        label->setGeometry(QRect(110, 330, 51, 41));
+        label->setGeometry(QRect(460, 80, 51, 41));
         label_2 = new QLabel(widget_4);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(150, 10, 51, 41));
-        tableWidget_3 = new QTableWidget(widget_4);
-        if (tableWidget_3->columnCount() < 3)
-            tableWidget_3->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem44 = new QTableWidgetItem();
-        tableWidget_3->setHorizontalHeaderItem(0, __qtablewidgetitem44);
-        QTableWidgetItem *__qtablewidgetitem45 = new QTableWidgetItem();
-        tableWidget_3->setHorizontalHeaderItem(1, __qtablewidgetitem45);
-        QTableWidgetItem *__qtablewidgetitem46 = new QTableWidgetItem();
-        tableWidget_3->setHorizontalHeaderItem(2, __qtablewidgetitem46);
-        if (tableWidget_3->rowCount() < 6)
-            tableWidget_3->setRowCount(6);
-        QTableWidgetItem *__qtablewidgetitem47 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(0, __qtablewidgetitem47);
-        QTableWidgetItem *__qtablewidgetitem48 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(1, __qtablewidgetitem48);
-        QTableWidgetItem *__qtablewidgetitem49 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(2, __qtablewidgetitem49);
-        QTableWidgetItem *__qtablewidgetitem50 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(3, __qtablewidgetitem50);
-        QTableWidgetItem *__qtablewidgetitem51 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(4, __qtablewidgetitem51);
-        QTableWidgetItem *__qtablewidgetitem52 = new QTableWidgetItem();
-        tableWidget_3->setVerticalHeaderItem(5, __qtablewidgetitem52);
-        tableWidget_3->setObjectName("tableWidget_3");
-        tableWidget_3->setGeometry(QRect(10, 80, 411, 201));
-        tableWidget_3->setStyleSheet(QString::fromUtf8("font: 700 10pt \"Berlin Sans FB Demi\";"));
         label_9 = new QLabel(widget_4);
         label_9->setObjectName("label_9");
         label_9->setGeometry(QRect(10, 10, 101, 20));
-        widget_6 = new QWidget(voirfacture);
-        widget_6->setObjectName("widget_6");
-        widget_6->setGeometry(QRect(490, 30, 441, 401));
-        pushButton_9 = new QPushButton(widget_6);
-        pushButton_9->setObjectName("pushButton_9");
-        pushButton_9->setGeometry(QRect(290, 20, 93, 29));
-        pushButton_11 = new QPushButton(widget_6);
-        pushButton_11->setObjectName("pushButton_11");
-        pushButton_11->setGeometry(QRect(310, 350, 93, 29));
-        lineEdit_17 = new QLineEdit(widget_6);
-        lineEdit_17->setObjectName("lineEdit_17");
-        lineEdit_17->setGeometry(QRect(160, 20, 113, 26));
-        lineEdit_21 = new QLineEdit(widget_6);
-        lineEdit_21->setObjectName("lineEdit_21");
-        lineEdit_21->setGeometry(QRect(170, 350, 113, 26));
-        label_3 = new QLabel(widget_6);
+        PDF_3 = new QPushButton(widget_4);
+        PDF_3->setObjectName("PDF_3");
+        PDF_3->setGeometry(QRect(490, 170, 93, 29));
+        Qr_code_btn_2 = new QPushButton(widget_4);
+        Qr_code_btn_2->setObjectName("Qr_code_btn_2");
+        Qr_code_btn_2->setGeometry(QRect(490, 210, 93, 29));
+        Qrcode_Label_2 = new QLabel(widget_4);
+        Qrcode_Label_2->setObjectName("Qrcode_Label_2");
+        Qrcode_Label_2->setGeometry(QRect(470, 270, 151, 81));
+        Tab_facture_2 = new QTableView(widget_4);
+        Tab_facture_2->setObjectName("Tab_facture_2");
+        Tab_facture_2->setGeometry(QRect(50, 80, 371, 211));
+        comboBox_trifactures_2 = new QComboBox(widget_4);
+        comboBox_trifactures_2->addItem(QString());
+        comboBox_trifactures_2->addItem(QString());
+        comboBox_trifactures_2->addItem(QString());
+        comboBox_trifactures_2->addItem(QString());
+        comboBox_trifactures_2->setObjectName("comboBox_trifactures_2");
+        comboBox_trifactures_2->setGeometry(QRect(260, 310, 69, 22));
+        label_3 = new QLabel(widget_4);
         label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(110, 10, 51, 41));
-        label_8 = new QLabel(widget_6);
-        label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(120, 340, 51, 41));
-        tableWidget_7 = new QTableWidget(widget_6);
-        if (tableWidget_7->columnCount() < 3)
-            tableWidget_7->setColumnCount(3);
-        QTableWidgetItem *__qtablewidgetitem53 = new QTableWidgetItem();
-        tableWidget_7->setHorizontalHeaderItem(0, __qtablewidgetitem53);
-        QTableWidgetItem *__qtablewidgetitem54 = new QTableWidgetItem();
-        tableWidget_7->setHorizontalHeaderItem(1, __qtablewidgetitem54);
-        QTableWidgetItem *__qtablewidgetitem55 = new QTableWidgetItem();
-        tableWidget_7->setHorizontalHeaderItem(2, __qtablewidgetitem55);
-        if (tableWidget_7->rowCount() < 6)
-            tableWidget_7->setRowCount(6);
-        QTableWidgetItem *__qtablewidgetitem56 = new QTableWidgetItem();
-        tableWidget_7->setVerticalHeaderItem(0, __qtablewidgetitem56);
-        QTableWidgetItem *__qtablewidgetitem57 = new QTableWidgetItem();
-        tableWidget_7->setVerticalHeaderItem(1, __qtablewidgetitem57);
-        QTableWidgetItem *__qtablewidgetitem58 = new QTableWidgetItem();
-        tableWidget_7->setVerticalHeaderItem(2, __qtablewidgetitem58);
-        QTableWidgetItem *__qtablewidgetitem59 = new QTableWidgetItem();
-        tableWidget_7->setVerticalHeaderItem(3, __qtablewidgetitem59);
-        QTableWidgetItem *__qtablewidgetitem60 = new QTableWidgetItem();
-        tableWidget_7->setVerticalHeaderItem(4, __qtablewidgetitem60);
-        QTableWidgetItem *__qtablewidgetitem61 = new QTableWidgetItem();
-        tableWidget_7->setVerticalHeaderItem(5, __qtablewidgetitem61);
-        tableWidget_7->setObjectName("tableWidget_7");
-        tableWidget_7->setGeometry(QRect(20, 80, 411, 201));
-        tableWidget_7->setStyleSheet(QString::fromUtf8("font: 700 10pt \"Berlin Sans FB Demi\";"));
-        label_10 = new QLabel(widget_6);
-        label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(10, 10, 63, 20));
+        label_3->setGeometry(QRect(160, 300, 81, 41));
         tabWidget_5->addTab(voirfacture, QString());
         tab_10 = new QWidget();
         tab_10->setObjectName("tab_10");
@@ -1903,12 +2000,12 @@ public:
 "font: 12pt \"Berlin Sans FB\";\n"
 "}\n"
 ""));
-        graphicsView = new QGraphicsView(tab_10);
-        graphicsView->setObjectName("graphicsView");
-        graphicsView->setGeometry(QRect(70, 50, 361, 331));
         graphicsView_2 = new QGraphicsView(tab_10);
         graphicsView_2->setObjectName("graphicsView_2");
-        graphicsView_2->setGeometry(QRect(480, 50, 361, 331));
+        graphicsView_2->setGeometry(QRect(600, 20, 361, 331));
+        graphicsView = new QGraphicsView(tab_10);
+        graphicsView->setObjectName("graphicsView");
+        graphicsView->setGeometry(QRect(190, 20, 361, 331));
         tabWidget_5->addTab(tab_10, QString());
         modules->addTab(finance, QString());
         pushButton = new QPushButton(app);
@@ -1987,7 +2084,7 @@ public:
         login->setGeometry(QRect(110, 50, 181, 51));
         Logo = new QLabel(interfaceConnexion);
         Logo->setObjectName("Logo");
-        Logo->setGeometry(QRect(-50, 140, 451, 181));
+        Logo->setGeometry(QRect(0, 190, 451, 181));
         Logo->setStyleSheet(QString::fromUtf8("font: 36pt \"Segoe UI\";"));
         Logo->setPixmap(QPixmap(QString::fromUtf8("../../Downloads/0abf77c0-45b6-45df-89ee-da8bed3ac28b-removebg-preview.png")));
         slogan = new QLabel(interfaceConnexion);
@@ -1999,12 +2096,12 @@ public:
         retranslateUi(MainWindow);
 
         stackedWidget->setCurrentIndex(0);
-        modules->setCurrentIndex(1);
-        tabWidget->setCurrentIndex(2);
-        tabWidget_2->setCurrentIndex(0);
+        modules->setCurrentIndex(6);
+        tabWidget->setCurrentIndex(0);
+        tabWidget_2->setCurrentIndex(1);
         tabWidget_3->setCurrentIndex(0);
-        tabWidget_4->setCurrentIndex(0);
-        tabWidget_5->setCurrentIndex(0);
+        tabWidget_4->setCurrentIndex(3);
+        tabWidget_5->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -2027,9 +2124,9 @@ public:
         label_35->setText(QCoreApplication::translate("MainWindow", "ID :", nullptr));
         searchB->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         STOCK->setText(QCoreApplication::translate("MainWindow", "              Stock", nullptr));
-        refresh->setText(QString());
-        PDF->setText(QString());
-        tri->setText(QString());
+        refresh->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
+        PDF->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
+        tri->setText(QCoreApplication::translate("MainWindow", "Tri", nullptr));
         label_11->setText(QCoreApplication::translate("MainWindow", "ID:", nullptr));
         modifyB->setText(QCoreApplication::translate("MainWindow", "Modify", nullptr));
         comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "ID", nullptr));
@@ -2052,14 +2149,6 @@ public:
         save1->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(refilling), QCoreApplication::translate("MainWindow", "New Refueling", nullptr));
         modules->setTabText(modules->indexOf(stock), QCoreApplication::translate("MainWindow", "Stock", nullptr));
-        listofingredients->setText(QCoreApplication::translate("MainWindow", "List of ingredients :", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(cooking), QCoreApplication::translate("MainWindow", "Cooking", nullptr));
-        ADD_3->setText(QCoreApplication::translate("MainWindow", "ADD", nullptr));
-        Product->setText(QCoreApplication::translate("MainWindow", "New product :", nullptr));
-        id2->setText(QCoreApplication::translate("MainWindow", "Id :", nullptr));
-        date_2->setText(QCoreApplication::translate("MainWindow", "Expiry date :", nullptr));
-        quantity_2->setText(QCoreApplication::translate("MainWindow", "Quantity :", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QCoreApplication::translate("MainWindow", "New", nullptr));
         label_36->setText(QCoreApplication::translate("MainWindow", "ID:", nullptr));
         search_2->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
         label_51->setText(QCoreApplication::translate("MainWindow", "ID :", nullptr));
@@ -2121,79 +2210,100 @@ public:
 
         PRODUCTS->setText(QCoreApplication::translate("MainWindow", "Products ", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Consult", nullptr));
+        listofingredients->setText(QCoreApplication::translate("MainWindow", "List of ingredients :", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(cooking), QCoreApplication::translate("MainWindow", "Cooking", nullptr));
+        ADD_3->setText(QCoreApplication::translate("MainWindow", "ADD", nullptr));
+        Product->setText(QCoreApplication::translate("MainWindow", "New product :", nullptr));
+        id2->setText(QCoreApplication::translate("MainWindow", "Id :", nullptr));
+        date_2->setText(QCoreApplication::translate("MainWindow", "Expiry date :", nullptr));
+        quantity_2->setText(QCoreApplication::translate("MainWindow", "Quantity :", nullptr));
+        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_3), QCoreApplication::translate("MainWindow", "New", nullptr));
         modules->setTabText(modules->indexOf(products), QCoreApplication::translate("MainWindow", "Products", nullptr));
         add->setText(QCoreApplication::translate("MainWindow", "ADD", nullptr));
-        neworder->setText(QCoreApplication::translate("MainWindow", "New Order :", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
         name->setText(QCoreApplication::translate("MainWindow", "Client name : ", nullptr));
         paymentmethod->setText(QCoreApplication::translate("MainWindow", "Payment method :", nullptr));
         date_3->setText(QCoreApplication::translate("MainWindow", "Date:", nullptr));
-        label_16->setText(QCoreApplication::translate("MainWindow", "Order Cart:", nullptr));
+        label_15->setText(QCoreApplication::translate("MainWindow", "Product reference:", nullptr));
+        label_22->setText(QCoreApplication::translate("MainWindow", "Quantity of Product :", nullptr));
+        neworder->setText(QCoreApplication::translate("MainWindow", "New Order :", nullptr));
         tabWidget_3->setTabText(tabWidget_3->indexOf(newOrder), QCoreApplication::translate("MainWindow", "New", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
-        label_37->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
         label_38->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
+        label_37->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
+        remove_2->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
+        ref->setText(QCoreApplication::translate("MainWindow", "Refresh", nullptr));
+        pdf2->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
+        trier->setText(QCoreApplication::translate("MainWindow", "Tri", nullptr));
         tabWidget_3->setTabText(tabWidget_3->indexOf(consultOrder), QCoreApplication::translate("MainWindow", "Consult", nullptr));
         modules->setTabText(modules->indexOf(orders), QCoreApplication::translate("MainWindow", "Orders", nullptr));
-        nameproduct_2->setText(QCoreApplication::translate("MainWindow", "Date :", nullptr));
+        nameproduct_2->setText(QCoreApplication::translate("MainWindow", "commande:", nullptr));
         Price_2->setText(QCoreApplication::translate("MainWindow", "Phone number :", nullptr));
         numberproduct_2->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
         name_2->setText(QCoreApplication::translate("MainWindow", "Adress of client :", nullptr));
         paymentmethod_2->setText(QCoreApplication::translate("MainWindow", "Statue :", nullptr));
-        add_2->setText(QCoreApplication::translate("MainWindow", "ADD", nullptr));
-        Delivery_2->setText(QCoreApplication::translate("MainWindow", "Payment method :", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "name of client : ", nullptr));
+        pushButton_ajouter->setText(QCoreApplication::translate("MainWindow", "ADD", nullptr));
+
+        const bool __sortingEnabled1 = listWidget_statut_L->isSortingEnabled();
+        listWidget_statut_L->setSortingEnabled(false);
+        QListWidgetItem *___qlistwidgetitem = listWidget_statut_L->item(0);
+        ___qlistwidgetitem->setText(QCoreApplication::translate("MainWindow", "in storage", nullptr));
+        QListWidgetItem *___qlistwidgetitem1 = listWidget_statut_L->item(1);
+        ___qlistwidgetitem1->setText(QCoreApplication::translate("MainWindow", "on the way", nullptr));
+        QListWidgetItem *___qlistwidgetitem2 = listWidget_statut_L->item(2);
+        ___qlistwidgetitem2->setText(QCoreApplication::translate("MainWindow", "delivered", nullptr));
+        QListWidgetItem *___qlistwidgetitem3 = listWidget_statut_L->item(3);
+        ___qlistwidgetitem3->setText(QCoreApplication::translate("MainWindow", "canceled", nullptr));
+        listWidget_statut_L->setSortingEnabled(__sortingEnabled1);
+
         tabWidget_4->setTabText(tabWidget_4->indexOf(tab_8), QCoreApplication::translate("MainWindow", "New", nullptr));
-        QTableWidgetItem *___qtablewidgetitem25 = tableWidget_2->horizontalHeaderItem(0);
-        ___qtablewidgetitem25->setText(QCoreApplication::translate("MainWindow", "Order reference ", nullptr));
-        QTableWidgetItem *___qtablewidgetitem26 = tableWidget_2->horizontalHeaderItem(1);
-        ___qtablewidgetitem26->setText(QCoreApplication::translate("MainWindow", "Date ", nullptr));
-        QTableWidgetItem *___qtablewidgetitem27 = tableWidget_2->horizontalHeaderItem(2);
-        ___qtablewidgetitem27->setText(QCoreApplication::translate("MainWindow", "Client name ", nullptr));
-        QTableWidgetItem *___qtablewidgetitem28 = tableWidget_2->horizontalHeaderItem(3);
-        ___qtablewidgetitem28->setText(QCoreApplication::translate("MainWindow", "Adress ", nullptr));
-        QTableWidgetItem *___qtablewidgetitem29 = tableWidget_2->horizontalHeaderItem(4);
-        ___qtablewidgetitem29->setText(QCoreApplication::translate("MainWindow", "Phone number ", nullptr));
-        QTableWidgetItem *___qtablewidgetitem30 = tableWidget_2->horizontalHeaderItem(5);
-        ___qtablewidgetitem30->setText(QCoreApplication::translate("MainWindow", "Payment method", nullptr));
-        QTableWidgetItem *___qtablewidgetitem31 = tableWidget_2->horizontalHeaderItem(6);
-        ___qtablewidgetitem31->setText(QCoreApplication::translate("MainWindow", "Statue ", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Search ", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "Remove ", nullptr));
+        pushButton_supprimer->setText(QCoreApplication::translate("MainWindow", "Remove ", nullptr));
+        pushButton_modifier->setText(QCoreApplication::translate("MainWindow", "update", nullptr));
+        pushButton_PDF->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
         tabWidget_4->setTabText(tabWidget_4->indexOf(tab_9), QCoreApplication::translate("MainWindow", "Consult", nullptr));
+        pushButton_rechercher->setText(QCoreApplication::translate("MainWindow", "Search ", nullptr));
+        label_6->setText(QCoreApplication::translate("MainWindow", "Order reference :", nullptr));
+        tabWidget_4->setTabText(tabWidget_4->indexOf(tab_2), QCoreApplication::translate("MainWindow", "research", nullptr));
+        pushButton_status->setText(QCoreApplication::translate("MainWindow", "Show Status", nullptr));
+        label_16->setText(QCoreApplication::translate("MainWindow", "Enter Order Reference:", nullptr));
+        label_5->setText(QString());
+        tabWidget_4->setTabText(tabWidget_4->indexOf(tab_11), QCoreApplication::translate("MainWindow", "status bar", nullptr));
+        label_20->setText(QCoreApplication::translate("MainWindow", "Enter Order Reference:", nullptr));
+        label_23->setText(QCoreApplication::translate("MainWindow", "write your notes here:", nullptr));
+        label_24->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">\360\237\230\243</span></p></body></html>", nullptr));
+        label_25->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">\360\237\230\220</span></p></body></html>", nullptr));
+        label_26->setText(QCoreApplication::translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:36pt;\">\360\237\230\204</span></p></body></html>", nullptr));
+        checkBox->setText(QString());
+        checkBox_2->setText(QString());
+        checkBox_3->setText(QString());
+        label_27->setText(QCoreApplication::translate("MainWindow", "client's feedback:", nullptr));
+        pushButton_feedback->setText(QCoreApplication::translate("MainWindow", "add feedback", nullptr));
+        tabWidget_4->setTabText(tabWidget_4->indexOf(tab_12), QCoreApplication::translate("MainWindow", "feedback", nullptr));
         modules->setTabText(modules->indexOf(delivery), QCoreApplication::translate("MainWindow", "Delivery", nullptr));
         modules->setTabText(modules->indexOf(canning), QCoreApplication::translate("MainWindow", "Canning", nullptr));
-        label_39->setText(QCoreApplication::translate("MainWindow", "Code :", nullptr));
-        label_40->setText(QCoreApplication::translate("MainWindow", "Type :", nullptr));
-        label_52->setText(QCoreApplication::translate("MainWindow", "Name :", nullptr));
-        pushButton_8->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        label_54->setText(QCoreApplication::translate("MainWindow", "PDF :", nullptr));
+        label_39->setText(QCoreApplication::translate("MainWindow", "ID:", nullptr));
+        label_40->setText(QCoreApplication::translate("MainWindow", "Montant:", nullptr));
+        label_52->setText(QCoreApplication::translate("MainWindow", "Date", nullptr));
+        add_facture_btn->setText(QCoreApplication::translate("MainWindow", "Add/Update", nullptr));
+        Id_facture_modif->setText(QString());
+        label_41->setText(QCoreApplication::translate("MainWindow", "ID a modifier", nullptr));
+        searcher_facture_foredit->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
+        rfid_btn->setText(QCoreApplication::translate("MainWindow", "Read rfid", nullptr));
         tabWidget_5->setTabText(tabWidget_5->indexOf(nvfacture), QCoreApplication::translate("MainWindow", "New", nullptr));
-        pushButton_7->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
-        pushButton_10->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Code:", nullptr));
+        Recherche_facture_3->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
+        Delete_facture_2->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Id:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Code:", nullptr));
-        QTableWidgetItem *___qtablewidgetitem32 = tableWidget_3->horizontalHeaderItem(0);
-        ___qtablewidgetitem32->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
-        QTableWidgetItem *___qtablewidgetitem33 = tableWidget_3->horizontalHeaderItem(1);
-        ___qtablewidgetitem33->setText(QCoreApplication::translate("MainWindow", "Code", nullptr));
-        QTableWidgetItem *___qtablewidgetitem34 = tableWidget_3->horizontalHeaderItem(2);
-        ___qtablewidgetitem34->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "Purchase", nullptr));
-        pushButton_9->setText(QCoreApplication::translate("MainWindow", "Search", nullptr));
-        pushButton_11->setText(QCoreApplication::translate("MainWindow", "Remove", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "Code:", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWindow", "Code:", nullptr));
-        QTableWidgetItem *___qtablewidgetitem35 = tableWidget_7->horizontalHeaderItem(0);
-        ___qtablewidgetitem35->setText(QCoreApplication::translate("MainWindow", "Name", nullptr));
-        QTableWidgetItem *___qtablewidgetitem36 = tableWidget_7->horizontalHeaderItem(1);
-        ___qtablewidgetitem36->setText(QCoreApplication::translate("MainWindow", "Code", nullptr));
-        QTableWidgetItem *___qtablewidgetitem37 = tableWidget_7->horizontalHeaderItem(2);
-        ___qtablewidgetitem37->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "Sale", nullptr));
+        label_9->setText(QCoreApplication::translate("MainWindow", "Factures", nullptr));
+        PDF_3->setText(QCoreApplication::translate("MainWindow", "PDF", nullptr));
+        Qr_code_btn_2->setText(QCoreApplication::translate("MainWindow", "Qr Code", nullptr));
+        Qrcode_Label_2->setText(QString());
+        comboBox_trifactures_2->setItemText(0, QCoreApplication::translate("MainWindow", "Aucun", nullptr));
+        comboBox_trifactures_2->setItemText(1, QCoreApplication::translate("MainWindow", "ID", nullptr));
+        comboBox_trifactures_2->setItemText(2, QCoreApplication::translate("MainWindow", "Montant", nullptr));
+        comboBox_trifactures_2->setItemText(3, QCoreApplication::translate("MainWindow", "Date", nullptr));
+
+        label_3->setText(QCoreApplication::translate("MainWindow", "Trier par", nullptr));
         tabWidget_5->setTabText(tabWidget_5->indexOf(voirfacture), QCoreApplication::translate("MainWindow", "Consult", nullptr));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_10), QCoreApplication::translate("MainWindow", "Statistics ", nullptr));
         modules->setTabText(modules->indexOf(finance), QCoreApplication::translate("MainWindow", "Finance", nullptr));

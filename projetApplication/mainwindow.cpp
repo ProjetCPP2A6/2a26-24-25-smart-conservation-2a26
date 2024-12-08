@@ -70,7 +70,7 @@ MainWindow::MainWindow(QWidget *parent)
         QTimer::singleShot(10000, this, &MainWindow::clearLCDMessage);
 
 
-        /*// Lire la réponse de l'Arduino
+        /*/ Lire la réponse de l'Arduino
         QByteArray response = arduino->read_from_arduino();
 
         if (!response.isEmpty()) {
@@ -190,7 +190,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //YOUSSEF INTEGRATION
 
-    ui->Tab_facture->setModel(f.afficher());
+    ui->Tab_facture_2->setModel(f.afficher());
 
     ////arduino
     int ret=A.connect_arduino(); // lancer la connexion à arduino
@@ -1077,16 +1077,16 @@ void MainWindow::on_add_facture_btn_clicked()
         }
     }
 
-    ui->Tab_facture->setModel(f.afficher());
+    ui->Tab_facture_2->setModel(f.afficher());
 }
 
 
 void MainWindow::on_Delete_facture_clicked()
 {
-    int id=ui->idfacture_supp->text().toInt();
+    int id=ui->idfacture_supp_2->text().toInt();
     int test=f.supprimer(id);
     if (test==1)
-    {         ui->Tab_facture->setModel(f.afficher());
+    {         ui->Tab_facture_2->setModel(f.afficher());
 
         QMessageBox::information(nullptr, QObject::tr("OK"),
                                  QObject::tr("Supression effectué.\n"
@@ -1120,7 +1120,7 @@ void MainWindow::on_searcher_facture_foredit_clicked()
         ui->Id_facture->setText(ID);
         ui->Montant_Facture->setText(Montant);
         ui->dateEditFacture->setDate(Date);
-        ui->Tab_facture->setModel(f.afficher());
+        ui->Tab_facture_2->setModel(f.afficher());
 
     }
     else {
@@ -1133,15 +1133,15 @@ void MainWindow::on_searcher_facture_foredit_clicked()
 }
 
 
-void MainWindow::on_Recherche_facture_2_clicked()
+void MainWindow::on_Recherche_facture_3_clicked()
 {
-    ui->Tab_facture->setModel( f.rechercher(ui->Recherche_facture->text()));
+    ui->Tab_facture_2->setModel( f.rechercher(ui->Recherche_facture_3->text()));
 }
 
 
-void MainWindow::on_Recherche_facture_textChanged(const QString &arg1)
+void MainWindow::on_Recherche_facture_4_textChanged(const QString &arg1)
 {
-    ui->Tab_facture->setModel( f.rechercher(ui->Recherche_facture->text()));
+    ui->Tab_facture_2->setModel( f.rechercher(ui->Recherche_facture_3->text()));
 
 }
 
@@ -1213,7 +1213,7 @@ void MainWindow::on_PDF_clicked()
 
 void MainWindow::on_tabWidget_5_currentChanged(int index)
 {
-    ui->Tab_facture->setModel(f.afficher());
+    ui->Tab_facture_2->setModel(f.afficher());
 }
 
 
@@ -1221,9 +1221,9 @@ void MainWindow::on_comboBox_trifactures_currentTextChanged(const QString &arg1)
 {
     QString critere = arg1;
     if (critere != "Aucun") {
-        ui->Tab_facture->setModel(f.trier(critere));
+        ui->Tab_facture_2->setModel(f.trier(critere));
     } else {
-        ui->Tab_facture->setModel(f.afficher());  // Reset to the default display if "Aucun" is selected
+        ui->Tab_facture_2->setModel(f.afficher());  // Reset to the default display if "Aucun" is selected
     }
 }
 
@@ -1231,7 +1231,7 @@ void MainWindow::on_comboBox_trifactures_currentTextChanged(const QString &arg1)
 void MainWindow::on_Qr_code_btn_clicked()
 {
 
-    QModelIndex currentIndex = ui->Tab_facture->selectionModel()->currentIndex();
+    QModelIndex currentIndex = ui->Tab_facture_2->selectionModel()->currentIndex();
 
     if (!currentIndex.isValid()) {
         QMessageBox::warning(this, "No Selection", "Please select a facture first.");
@@ -1240,7 +1240,7 @@ void MainWindow::on_Qr_code_btn_clicked()
 
 
     int row = currentIndex.row();
-    QSqlQueryModel *model = qobject_cast<QSqlQueryModel*>(ui->Tab_facture->model());
+    QSqlQueryModel *model = qobject_cast<QSqlQueryModel*>(ui->Tab_facture_2->model());
 
 
     QString idFacture = model->data(model->index(row, 0)).toString(); // ID
@@ -1257,7 +1257,7 @@ void MainWindow::on_Qr_code_btn_clicked()
     QImage qrImage = m_generator.generateQr(qrText);
 
 
-    ui->Qrcode_Label->setPixmap(QPixmap::fromImage(qrImage).scaled(ui->Qrcode_Label->size(), Qt::KeepAspectRatio));
+    ui->Qrcode_Label_2->setPixmap(QPixmap::fromImage(qrImage).scaled(ui->Qrcode_Label_2->size(), Qt::KeepAspectRatio));
 }
 QString lastScannedRFID = "";
 
@@ -1281,3 +1281,6 @@ void MainWindow::on_rfid_btn_clicked()
 
 
 // /////////////////
+
+
+

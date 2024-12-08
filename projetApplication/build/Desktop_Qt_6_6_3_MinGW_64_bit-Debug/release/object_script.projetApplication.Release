@@ -1,0 +1,15 @@
+release/arduino.o
+release/commandes.o
+release/connection.o
+release/cuiss_ing.o
+release/deliver.o
+release/main.o
+release/mainwindow.o
+release/matieres_premieres.o
+release/ravi_ing.o
+release/ravitaillements.o
+release/QrCodeGenerator.o
+release/finances.o
+release/qrcodegen.o
+release/qrc_res.o
+release/moc_mainwindow.o

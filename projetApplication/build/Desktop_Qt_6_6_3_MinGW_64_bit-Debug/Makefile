@@ -124,8 +124,6 @@ Makefile: ../../projetApplication.pro C:/Qt/6.6.3/mingw_64/mkspecs/win32-g++/qma
 		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_concurrent.pri \
 		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri \
 		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core.pri \
-		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core5compat.pri \
-		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri \
 		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core_private.pri \
 		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_datavisualization.pri \
 		C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_datavisualization_private.pri \
@@ -404,13 +402,18 @@ Makefile: ../../projetApplication.pro C:/Qt/6.6.3/mingw_64/mkspecs/win32-g++/qma
 		../../projetApplication.pro \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6Charts.prl \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6OpenGLWidgets.prl \
+		C:/Qt/6.6.3/mingw_64/lib/Qt6PrintSupport.prl \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6Widgets.prl \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6OpenGL.prl \
+		C:/Qt/6.6.3/mingw_64/lib/Qt6Svg.prl \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6Gui.prl \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6Sql.prl \
+		C:/Qt/6.6.3/mingw_64/lib/Qt6SerialPort.prl \
+		C:/Qt/6.6.3/mingw_64/lib/Qt6Network.prl \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6Core.prl \
 		C:/Qt/6.6.3/mingw_64/lib/Qt6EntryPoint.prl \
-		C:/Qt/6.6.3/mingw_64/mkspecs/features/build_pass.prf
+		C:/Qt/6.6.3/mingw_64/mkspecs/features/build_pass.prf \
+		../../res.qrc
 	$(QMAKE) -o Makefile ..\..\projetApplication.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/6.6.3/mingw_64/mkspecs/features/spec_pre.prf:
 C:/Qt/6.6.3/mingw_64/mkspecs/features/device_config.prf:
@@ -466,8 +469,6 @@ C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_chartsqml_private.pri:
 C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_concurrent.pri:
 C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_concurrent_private.pri:
 C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core.pri:
-C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core5compat.pri:
-C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core5compat_private.pri:
 C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_core_private.pri:
 C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_datavisualization.pri:
 C:/Qt/6.6.3/mingw_64/mkspecs/modules/qt_lib_datavisualization_private.pri:
@@ -746,13 +747,18 @@ C:/Qt/6.6.3/mingw_64/mkspecs/features/lex.prf:
 ../../projetApplication.pro:
 C:/Qt/6.6.3/mingw_64/lib/Qt6Charts.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6OpenGLWidgets.prl:
+C:/Qt/6.6.3/mingw_64/lib/Qt6PrintSupport.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6Widgets.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6OpenGL.prl:
+C:/Qt/6.6.3/mingw_64/lib/Qt6Svg.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6Gui.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6Sql.prl:
+C:/Qt/6.6.3/mingw_64/lib/Qt6SerialPort.prl:
+C:/Qt/6.6.3/mingw_64/lib/Qt6Network.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6Core.prl:
 C:/Qt/6.6.3/mingw_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.6.3/mingw_64/mkspecs/features/build_pass.prf:
+../../res.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\..\projetApplication.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
